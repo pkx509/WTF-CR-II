@@ -1,0 +1,12 @@
+﻿using System;
+
+namespace DITS.HILI.WMS.Web.apps.master
+{
+    public partial class frmAllCurrency : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

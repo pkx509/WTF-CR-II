@@ -1,0 +1,26 @@
+﻿@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../resources/fonts/Roboto-Regular.eot");
+  src: url("../resources/fonts/Roboto-Regular.woff") format("woff"), url("../resources/fonts/Roboto-Regular.ttf") format("truetype"), url("../resources/fonts/Roboto-Regular.svg") format("svg"); }
+
+div.x-grid-with-row-lines {
+  background: #FFF;
+  border-color: #FFF;
+  border-radius: 0; }
+  div.x-grid-with-row-lines * {
+    font-family: Roboto, Tahoma !important;
+    font-size: 12px; }
+  div.x-grid-with-row-lines .x-toolbar {
+    background: #FFF; }
+  div.x-grid-with-row-lines div.x-grid-header-ct .x-column-header {
+    color: #0b6f52;
+    border-color: #FFF; }
+  div.x-grid-with-row-lines div.x-grid-header-ct .x-column-header-trigger {
+    border-right: 1px solid #C5C5C5; }
+  div.x-grid-with-row-lines div.x-grid-header-ct .x-column-header-inner {
+    background: #FFF; }
+  div.x-grid-with-row-lines div.x-grid-header-ct .x-column-header-text {
+    line-height: 32px; }
+

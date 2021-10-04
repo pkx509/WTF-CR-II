@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="85.5dp"
+        android:id="@+id/linearLayout1">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="25.5dp"
+            android:id="@+id/linearLayout2">
+            <TextView
+                android:text="Product"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="86.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView1"
+                android:gravity="center_vertical" />
+            <EditText
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txtQAProduct" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="27.5dp"
+            android:id="@+id/linearLayout3">
+            <TextView
+                android:text="Confirm QTY"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="86.5dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView1"
+                android:gravity="center_vertical" />
+            <EditText
+                android:inputType="textMultiLine"
+                android:layout_width="76.5dp"
+                android:layout_height="match_parent"
+                android:id="@+id/txtQAConfirmQTY1" />
+            <TextView
+                android:text="/"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="15.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView1"
+                android:gravity="center" />
+            <EditText
+                android:inputType="textMultiLine"
+                android:layout_width="76.5dp"
+                android:layout_height="match_parent"
+                android:id="@+id/txtQAConfirmQTY2" />
+            <EditText
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/editText1" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="30.0dp"
+            android:id="@+id/linearLayout4">
+            <TextView
+                android:text="Location"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="86.5dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView1"
+                android:gravity="center_vertical" />
+            <EditText
+                android:inputType="textMultiLine"
+                android:layout_width="153.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/txtQALocation" />
+            <TextView
+                android:text="Status"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="54.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView1"
+                android:gravity="center" />
+            <EditText
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txtQAStatus" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

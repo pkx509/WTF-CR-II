@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9DCC8F45-CCE7-45FA-BAD9-4706494ACBFD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DITS.HILI.WMS.MasterService</RootNamespace>
+    <AssemblyName>DITS.HILI.WMS.MasterService</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>DITS.HILI.WMS.MasterService.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>DITS.HILI.WMS.MasterService.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.2.11.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Buffers.4.4.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Diagnostics.DiagnosticSource.4.6.0\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Memory.4.5.3\lib\netstandard1.1\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Implement\Companies\CompanyService.cs" />
+    <Compile Include="Implement\Companies\EmployeeService.cs" />
+    <Compile Include="Implement\Companies\SiteService.cs" />
+    <Compile Include="Implement\Contacts\ContactService.cs" />
+    <Compile Include="Implement\Contacts\CustomerOfProductOwnerService.cs" />
+    <Compile Include="Implement\Contacts\ProductOwnerService.cs" />
+    <Compile Include="Implement\Contacts\SupplierOfProductOwnerService.cs" />
+    <Compile Include="Implement\Core\LanguageService.cs" />
+    <Compile Include="Implement\Products\ProductBrandService.cs" />
+    <Compile Include="Implement\Products\ProductGroupLevelService.cs" />
+    <Compile Include="Implement\Products\ProductService.cs" />
+    <Compile Include="Implement\Products\ProductShapeService.cs" />
+    <Compile Include="Implement\Products\ProductTemplateUOMService.cs" />
+    <Compile Include="Implement\Products\ProductUnitsService.cs" />
+    <Compile Include="Implement\Products\UnitService.cs" />
+    <Compile Include="Implement\Rule\RuleService.cs" />
+    <Compile Include="Implement\Secure\MonthEndService.cs" />
+    <Compile Include="Implement\Secure\PermissionService.cs" />
+    <Compile Include="Implement\Secure\ProgramService.cs" />
+    <Compile Include="Implement\Secure\RoleService.cs" />
+    <Compile Include="Implement\Secure\UserAccountService.cs" />
+    <Compile Include="Implement\Secure\UserGroupService.cs" />
+    <Compile Include="Implement\Utility\DocumentTypeService.cs" />
+    <Compile Include="Implement\Utility\ISONumberService.cs" />
+    <Compile Include="Implement\Utility\ItfInterfaceMappingService.cs" />
+    <Compile Include="Implement\Utility\PalletTypeService.cs" />
+    <Compile Include="Implement\Utility\PrinterService.cs" />
+    <Compile Include="Implement\Utility\ProductStatusService.cs" />
+    <Compile Include="Implement\Utility\ProductSubStatusService.cs" />
+    <Compile Include="Implement\Utility\ReasonService.cs" />
+    <Compile Include="Implement\Warehouses\DockService.cs" />
+    <Compile Include="Implement\Warehouses\EquipZoneConfigService.cs" />
+    <Compile Include="Implement\Warehouses\LocationService.cs" />
+    <Compile Include="Implement\Warehouses\LogicalZoneGroupService.cs" />
+    <Compile Include="Implement\Warehouses\LogicalZoneService.cs" />
+    <Compile Include="Implement\Warehouses\PhysicalZoneService.cs" />
+    <Compile Include="Implement\Warehouses\ShipToService.cs" />
+    <Compile Include="Implement\Warehouses\TruckTypeService.cs" />
+    <Compile Include="Implement\Warehouses\WarehouseService.cs" />
+    <Compile Include="Implement\Warehouses\ZoneService.cs" />
+    <Compile Include="Interface\Companies\ICompanyService.cs" />
+    <Compile Include="Interface\Companies\IEmployeeService.cs" />
+    <Compile Include="Interface\Companies\ISiteService.cs" />
+    <Compile Include="Interface\Contacts\IContactService.cs" />
+    <Compile Include="Interface\Contacts\ICustomerOfProductOwnerService.cs" />
+    <Compile Include="Interface\Contacts\IProductOwnerService.cs" />
+    <Compile Include="Interface\Contacts\ISupplierOfProductOwnerService.cs" />
+    <Compile Include="Interface\Core\ILanguageService.cs" />
+    <Compile Include="Interface\Products\IProductBrandService.cs" />
+    <Compile Include="Interface\Products\IProductGroupLevelService.cs" />
+    <Compile Include="Interface\Products\IProductService.cs" />
+    <Compile Include="Interface\Products\IProductShapeService.cs" />
+    <Compile Include="Interface\Products\IProductTemplateUOMService.cs" />
+    <Compile Include="Interface\Products\IProductUnitsService.cs" />
+    <Compile Include="Interface\Products\IUnitService.cs" />
+    <Compile Include="Interface\Rule\IRuleService.cs" />
+    <Compile Include="Interface\Secure\IMonthEndService.cs" />
+    <Compile Include="Interface\Secure\IPermissionService.cs" />
+    <Compile Include="Interface\Secure\IProgramService.cs" />
+    <Compile Include="Interface\Secure\IRoleService.cs" />
+    <Compile Include="Interface\Secure\IUserAccountService.cs" />
+    <Compile Include="Interface\Secure\IUserGroupService.cs" />
+    <Compile Include="Interface\Utility\IDocumentTypeService.cs" />
+    <Compile Include="Interface\Utility\IISONumberService.cs" />
+    <Compile Include="Interface\Utility\IItfInterfaceMappingService.cs" />
+    <Compile Include="Interface\Utility\IPalletTypeService.cs" />
+    <Compile Include="Interface\Utility\IPrinterService.cs" />
+    <Compile Include="Interface\Utility\IProductStatusService.cs" />
+    <Compile Include="Interface\Utility\IProductSubStatusService.cs" />
+    <Compile Include="Interface\Utility\IReasonService.cs" />
+    <Compile Include="Interface\Warehouses\IDockService.cs" />
+    <Compile Include="Interface\Warehouses\IEquipZoneConfigService.cs" />
+    <Compile Include="Interface\Warehouses\ILocationService.cs" />
+    <Compile Include="Interface\Warehouses\ILogicalZoneGroupService.cs" />
+    <Compile Include="Interface\Warehouses\ILogicalZoneService.cs" />
+    <Compile Include="Interface\Warehouses\IPhysicalZoneService.cs" />
+    <Compile Include="Interface\Warehouses\IShipToService.cs" />
+    <Compile Include="Interface\Warehouses\ITruckTypeService.cs" />
+    <Compile Include="Interface\Warehouses\IWarehouseService.cs" />
+    <Compile Include="Interface\Warehouses\IZoneService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="DITS.HILI.WMS.MasterService.ruleset" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\DITS.HILI.Framework\DITS.HILI.Framework.csproj">
+      <Project>{29104f08-820f-495a-b677-b44637566916}</Project>
+      <Name>DITS.HILI.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\DITS.HILI.WMS.Message\DITS.HILI.WMS.Message.csproj">
+      <Project>{7273ae32-5a28-4ac7-8f54-7327c7fede4d}</Project>
+      <Name>DITS.HILI.WMS.Message</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\Dispatch\DITS.HILI.WMS.DispatchModel\DITS.HILI.WMS.DispatchModel.csproj">
+      <Project>{E986FD62-B01E-48FC-846E-F34F738BBB89}</Project>
+      <Name>DITS.HILI.WMS.DispatchModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Tools\DailyPlan\DITS.HILI.WMS.DailyPlan\DITS.HILI.WMS.DailyPlanModel.csproj">
+      <Project>{C8B9C513-4597-4E89-A29F-693F40AC8209}</Project>
+      <Name>DITS.HILI.WMS.DailyPlanModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DITS.HILI.WMS.Core\DITS.HILI.WMS.Core.csproj">
+      <Project>{880da467-3a4c-4fd5-b848-2224594c8eec}</Project>
+      <Name>DITS.HILI.WMS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DITS.HILI.WMS.Master\DITS.HILI.WMS.MasterModel.csproj">
+      <Project>{6119CB96-198D-40F4-B5A8-CF0466181697}</Project>
+      <Name>DITS.HILI.WMS.MasterModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DITS.HILI.WMS.PasswordCryptography\DITS.HILI.WMS.PasswordCrypt.csproj">
+      <Project>{0a9ad5ab-1573-40aa-8e99-9e02dd5a12d6}</Project>
+      <Name>DITS.HILI.WMS.PasswordCrypt</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

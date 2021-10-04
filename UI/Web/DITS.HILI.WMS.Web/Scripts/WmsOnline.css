@@ -1,0 +1,72 @@
+﻿
+input.field-Normal {
+    background-color: White !important;
+    background-image: none !important;
+    color: #000000 !important;
+}
+
+input.field-Request {
+    background-color: #FFFFCC !important;
+    background-image: none !important;
+    color: #000000 !important;
+}
+
+input.field-ReadOnly {
+    background-color: #EDEDED !important;
+    background-image: none !important;
+    color: #000000 !important;
+}
+
+input.field-ReadOnly-Request {
+    background-color: #F1DFC5 !important;
+    background-image: none !important;
+    color: #000000 !important;
+}
+
+input.field-ReadOnly-Warning {
+    background-color: #EDEDED !important;
+    background-image: none !important;
+    color: #FF9900 !important;
+}
+
+input.field-ReadOnly-Error {
+    background-color: #FF0000 !important;
+    background-image: none !important;
+    color: #FFFFFF !important;
+}
+
+
+.x-form-required-field {
+    background-color: #FFFFCC;
+    background-image: none;
+}
+
+/*.x-form-readonly-field 
+{
+    background-color:#C4C4C4; background-image:none; 
+}*/
+
+input[readonly], input[readonly="readonly"] {
+    background-color: #E6E6E6;
+    background-image: none;
+}
+
+
+.x-form-type-text textarea.x-form-invalid-field,
+.x-form-type-text input.x-form-invalid-field,
+.x-form-type-password textarea.x-form-invalid-field,
+.x-form-type-password input.x-form-invalid-field,
+.x-form-type-number textarea.x-form-invalid-field,
+.x-form-type-number input.x-form-invalid-field,
+.x-form-type-email textarea.x-form-invalid-field,
+.x-form-type-email input.x-form-invalid-field,
+.x-form-type-search textarea.x-form-invalid-field,
+.x-form-type-search input.x-form-invalid-field,
+.x-form-type-tel textarea.x-form-invalid-field,
+.x-form-type-tel input.x-form-invalid-field {
+    background-color: #FFFFCC;
+}
+
+.x-column-header-inner {
+    text-align: center;
+}

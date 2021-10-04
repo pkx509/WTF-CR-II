@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{46274FD1-97EA-40B6-A01B-A2AEFFF7D6FC}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DITS.HILI.WMS.Mobile</RootNamespace>
+    <AssemblyName>DITS.HILI.WMS.Mobile</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>true</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DITS.HILI.WMS.MasterModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Infrastucture\DITS.HILI.WMS.Master\bin\Debug\DITS.HILI.WMS.MasterModel.dll</HintPath>
+    </Reference>
+    <Reference Include="DITS.HILI.WMS.ReceiveModel">
+      <HintPath>..\..\Services\Stages\Receive\DITS.HILI.WMS.Receive\bin\Debug\DITS.HILI.WMS.ReceiveModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activities\Common\LoadingAdapter.cs" />
+    <Compile Include="Activities\Common\ProductSubStatusAdapter.cs" />
+    <Compile Include="Activities\Common\ProductStatusAdapter.cs" />
+    <Compile Include="Activities\Common\ProductUnitListAdapter.cs" />
+    <Compile Include="Activities\Ihili42.cs" />
+    <Compile Include="Activities\LocalLib.cs" />
+    <Compile Include="Activities\MdlItems.cs" />
+    <Compile Include="Activities\PutawayActivity\MdlPutawayConfirmDetail.cs" />
+    <Compile Include="Activities\PutawayActivity\PutawayItemDetailActivity.cs" />
+    <Compile Include="Activities\PutawayActivity\PutawayListItemAdapter.cs" />
+    <Compile Include="Activities\PutawayActivity\PutawayListItemActivity.cs" />
+    <Compile Include="Activities\QAActivity\QAJobListActivity.cs" />
+    <Compile Include="Activities\QAActivity\QAJobListAdapter.cs" />
+    <Compile Include="Activities\QAActivity\QAProductListAdapter.cs" />
+    <Compile Include="Activities\ReceiveActivity\ReceiveActivity.cs" />
+    <Compile Include="Activities\ReceiveActivity\ReceiveItemActivity.cs" />
+    <Compile Include="Activities\ReceiveActivity\ReceiveItemAdapter.cs" />
+    <Compile Include="Activities\ReceiveActivity\ReceiveListAdapter.cs" />
+    <Compile Include="Activities\ReceiveActivity\ReceiveItemConfirmActivity.cs" />
+    <Compile Include="Activities\UIUtils.cs" />
+    <Compile Include="Helper\Shared.cs" />
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="GettingStarted.Xamarin" />
+    <None Include="packages.config" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\layout\Receive.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\listReceive.axml" />
+    <AndroidResource Include="Resources\layout\listReceiveItem.axml" />
+    <AndroidResource Include="Resources\layout\ReceiveItem.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ReceiveItemConfirm.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PutawayListItem.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\tempPutawayProduct.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\PutawayItemDetail.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\QAJobListItem.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\tempQAJobList.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\tempQAProductList.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\QAProductDetail.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Main.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastucture\DITS.HILI.WMS.PasswordCryptography\DITS.HILI.WMS.PasswordCrypt.csproj">
+      <Project>{0a9ad5ab-1573-40aa-8e99-9e02dd5a12d6}</Project>
+      <Name>DITS.HILI.WMS.PasswordCrypt</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\PutAway\DITS.HILI.WMS.PutAway\DITS.HILI.WMS.PutAwayModel.csproj">
+      <Project>{54e124f5-517c-4fe3-b3a6-818d8dbba547}</Project>
+      <Name>DITS.HILI.WMS.PutAwayModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DITS.HILI.HttpClientService\DITS.HILI.HttpClientService.csproj">
+      <Project>{56924826-ff3a-4240-8741-4b17cd822b4c}</Project>
+      <Name>DITS.HILI.HttpClientService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DITS.HILI.WMS.MobileService\DITS.HILI.WMS.MobileService.csproj">
+      <Project>{944ef359-1981-458a-96a6-8034dd2506f2}</Project>
+      <Name>DITS.HILI.WMS.MobileService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Shipping6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\iconwms11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\fork3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\packingIco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\pa_m42.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\lo_m42.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\qa_m42.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+     Other similar extension points exist, see Microsoft.Common.targets.
+		<Target Name="BeforeBuild">
+		</Target>
+		<Target Name="AfterBuild">
+		</Target>
+ -->
+</Project>

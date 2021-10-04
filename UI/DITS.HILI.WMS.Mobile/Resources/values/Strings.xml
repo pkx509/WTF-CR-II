@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ApplicationName">Dynamic HILI 4.2</string>
+  <string name="ReceiveTitle">Receive orders</string>
+</resources>

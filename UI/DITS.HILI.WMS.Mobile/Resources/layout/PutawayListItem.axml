@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="45.5dp"
+        android:id="@+id/linearLayout1">
+        <Spinner
+            android:layout_width="146.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/spnPAWarehouses" />
+        <EditText
+            android:inputType="textMultiLine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scanTxt" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="45.5dp"
+        android:id="@+id/linearLayout99"
+        android:gravity="right"
+        android:background="@android:color/holo_green_light">
+        <Button
+            android:text="&lt;&lt;"
+            android:layout_width="56.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/paBack" />
+        <Button
+            android:text="Scan"
+            android:layout_width="69.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/scanBtn" />
+        <Button
+            android:text="Reload"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/reloadBtn" />
+    </LinearLayout>
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/putawayListView" />
+</LinearLayout>

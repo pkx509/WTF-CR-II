@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <TextView
+        android:text="Inbound task"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:gravity="center" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/gridLayout1"
+            android:backgroundTint="#00000000"
+            android:columnCount="2"
+            android:orientation="horizontal">
+            <ImageButton
+                android:src="@drawable/lo_m42"
+                android:id="@+id/btnReceive" />
+            <ImageButton
+                android:src="@drawable/pa_m42"
+                android:id="@+id/btnPutway" />
+        </GridLayout>
+    </ScrollView>
+    <TextView
+        android:text="Outbound task"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:gravity="center" />
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="129.0dp"
+        android:id="@+id/scrollView1">
+        <GridLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/gridLayout2"
+            android:columnCount="2" />
+    </ScrollView>
+    <TextView
+        android:text="Tools"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:gravity="center" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView2">
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/gridLayout3"
+            android:orientation="horizontal">
+            <ImageButton
+                android:src="@drawable/qa_m42"
+                android:id="@+id/btnQA" />
+        </GridLayout>
+    </ScrollView>
+</LinearLayout>

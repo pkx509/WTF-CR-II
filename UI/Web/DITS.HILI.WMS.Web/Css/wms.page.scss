@@ -1,0 +1,40 @@
+﻿$fontFamily:Roboto, Tahoma;
+$mainColor: #0b6f52;
+
+@font-face {
+	font-family:"Roboto";
+	font-style:normal;
+    font-weight:normal;
+	src:url("../resources/fonts/Roboto-Regular.eot");
+	src:url("../resources/fonts/Roboto-Regular.woff") format("woff"),
+        url("../resources/fonts/Roboto-Regular.ttf") format("truetype"),
+        url("../resources/fonts/Roboto-Regular.svg") format("svg");
+}
+
+div.x-grid-with-row-lines{
+    background:#FFF;
+    border-color:#FFF;
+    border-radius:0;
+    *{
+        font-family:$fontFamily!important;
+        font-size:12px;
+    }
+    .x-toolbar{
+        background:#FFF;
+    }
+    div.x-grid-header-ct{
+        .x-column-header{
+            color:$mainColor;
+            border-color:#FFF;
+        }
+        .x-column-header-trigger{
+            border-right:1px solid #C5C5C5;
+        }
+        .x-column-header-inner{
+            background:#FFF;
+        }
+        .x-column-header-text{
+            line-height:32px;
+        }
+    }
+}

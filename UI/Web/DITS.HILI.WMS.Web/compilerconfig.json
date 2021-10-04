@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Css/wms.css",
+    "inputFile": "Css/wms.scss"
+  },
+  {
+    "outputFile": "Css/wms.page.css",
+    "inputFile": "Css/wms.page.scss"
+  }
+]

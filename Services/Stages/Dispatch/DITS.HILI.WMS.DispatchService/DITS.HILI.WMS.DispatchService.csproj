@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5CA164A6-381B-4E42-930C-A7F18CC33155}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DITS.HILI.WMS.DispatchService</RootNamespace>
+    <AssemblyName>DITS.HILI.WMS.DispatchService</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>DITS.HILI.WMS.DispatchService.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>DITS.HILI.WMS.DispatchService.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.ApplicationInsights.2.11.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\System.Buffers.4.4.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\System.Diagnostics.DiagnosticSource.4.6.0\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\System.Memory.4.5.3\lib\netstandard1.1\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Implement\DispatchDetailService.cs" />
+    <Compile Include="Implement\DispatchService.cs" />
+    <Compile Include="Interface\IDispatchDetailService.cs" />
+    <Compile Include="Interface\IDispatchService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Common\DITS.HILI.Framework\DITS.HILI.Framework.csproj">
+      <Project>{29104f08-820f-495a-b677-b44637566916}</Project>
+      <Name>DITS.HILI.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Infrastucture\DITS.HILI.WMS.Core\DITS.HILI.WMS.Core.csproj">
+      <Project>{880DA467-3A4C-4FD5-B848-2224594C8EEC}</Project>
+      <Name>DITS.HILI.WMS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Infrastucture\DITS.HILI.WMS.MasterService\DITS.HILI.WMS.MasterService.csproj">
+      <Project>{9DCC8F45-CCE7-45FA-BAD9-4706494ACBFD}</Project>
+      <Name>DITS.HILI.WMS.MasterService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Infrastucture\DITS.HILI.WMS.Master\DITS.HILI.WMS.MasterModel.csproj">
+      <Project>{6119CB96-198D-40F4-B5A8-CF0466181697}</Project>
+      <Name>DITS.HILI.WMS.MasterModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Tools\DailyPlan\DITS.HILI.WMS.DailyPlan\DITS.HILI.WMS.DailyPlanModel.csproj">
+      <Project>{C8B9C513-4597-4E89-A29F-693F40AC8209}</Project>
+      <Name>DITS.HILI.WMS.DailyPlanModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Tools\ProductionControl\DITS.HILI.WMS.ProductionControlModel\DITS.HILI.WMS.ProductionControlModel.csproj">
+      <Project>{AB5796DD-A187-4A1B-BE22-77AD382E2307}</Project>
+      <Name>DITS.HILI.WMS.ProductionControlModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Picking\DITS.HILI.WMS.PickingModel\DITS.HILI.WMS.PickingModel.csproj">
+      <Project>{278AEC6E-65E7-4A5B-AB12-FBC2C98FE0E4}</Project>
+      <Name>DITS.HILI.WMS.PickingModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Receive\DITS.HILI.WMS.Receive\DITS.HILI.WMS.ReceiveModel.csproj">
+      <Project>{1BACBA81-C6DC-4C94-BFEF-273B052CEDB6}</Project>
+      <Name>DITS.HILI.WMS.ReceiveModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RegisterTruck\DITS.HILI.WMS.RegisterTruckModel\DITS.HILI.WMS.RegisterTruckModel.csproj">
+      <Project>{601169e8-90bc-480f-946c-c437f603e9e7}</Project>
+      <Name>DITS.HILI.WMS.RegisterTruckModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DITS.HILI.WMS.DispatchModel\DITS.HILI.WMS.DispatchModel.csproj">
+      <Project>{E986FD62-B01E-48FC-846E-F34F738BBB89}</Project>
+      <Name>DITS.HILI.WMS.DispatchModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DITS.HILI.WMS.DispatchService.ruleset" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DITS.HILI.WMS.ReceiveAPIs</name>
+    </assembly>
+    <members>
+        <member name="T:DITS.HILI.WMS.ReceiveAPIs.Controllers.LoadingInController">
+            <summary>
+            LoadingInController
+            </summary>
+        </member>
+        <member name="M:DITS.HILI.WMS.ReceiveAPIs.Controllers.LoadingInController.#ctor(DITS.HILI.WMS.ReceiveService.IReceiveServiceHH,DITS.HILI.WMS.Core.Resource.IMessageService)">
+            <summary>
+            LoadingInController
+            </summary>
+            <param name="service"></param>
+            <param name="messageService"></param>
+        </member>
+        <member name="M:DITS.HILI.WMS.ReceiveAPIs.Controllers.LoadingInController.GetReceivingByPalletCode(System.String)">
+            <summary>
+            GetPalletTagData
+            </summary>
+            <param name="palletCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DITS.HILI.WMS.ReceiveAPIs.Controllers.LoadingInController.ReceivePallet(System.String,System.Decimal,System.String)">
+            <summary>
+            ReceivePallet
+            </summary>
+            <param name="palletCode"></param>
+            <param name="receiveQty"></param>
+            <param name="suggestLocation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DITS.HILI.WMS.ReceiveAPIs.Controllers.LoadingInController.ConfirmKeep(System.String,System.Decimal,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="palletCode"></param>
+            <param name="qty"></param>
+            <param name="locationCode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DITS.HILI.WMS.ReceiveAPIs.Controllers.ReceiveController">
+            <summary>
+            Receive API Service
+            </summary>
+        </member>
+        <member name="M:DITS.HILI.WMS.ReceiveAPIs.Controllers.ReceiveController.add(DITS.HILI.WMS.ReceiveModel.Receive)">
+            <summary>
+            Save Receive Order
+            </summary>
+            <param name="entity">Receive Model</param>
+            <returns>New receive data model</returns>
+        </member>
+        <member name="M:DITS.HILI.WMS.ReceiveAPIs.Controllers.ReceiveController.getbyid(System.Guid)">
+            <summary>
+            Filter Receive Order By ReceiveID
+            </summary>
+            <param name="id">ReceiveID (Guid)</param>
+            <returns>Receive order data model</returns>
+        </member>
+        <member name="M:DITS.HILI.WMS.ReceiveAPIs.Controllers.ReceiveController.get(System.Nullable{DITS.HILI.WMS.ReceiveModel.ReceiveStatusEnum},System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            Search Receive Order
+            </summary>
+            <param name="receivestatusenum">Receive Status Enumerable </param>
+            <param name="keyword">Receive Code/PO/Invoice/ Supp. Name/Owner Name</param>
+            <param name="sdte">Start date search (Optional, Not require)</param>
+            <param name="edte">End date search(Optional, Not require)</param>
+            <returns>Receive Model Object</returns>
+        </member>
+        <member name="M:DITS.HILI.WMS.ReceiveAPIs.Controllers.ReceiveController.GetAllInternalReceive(System.Nullable{System.DateTime},DITS.HILI.WMS.ReceiveModel.ReceiveStatusEnum,System.Guid,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="estDate"></param>
+            <param name="status"></param>
+            <param name="receiveTypeID"></param>
+            <param name="receiveCode"></param>
+            <param name="orderNo"></param>
+            <param name="PONo"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DITS.HILI.WMS.ReceiveAPIs.Controllers.ReceiveController.getbyproductcode(System.Guid,System.String)">
+            <summary> 
+            Get Receive Detail by product code
+            </summary>
+            <param name="productCode">Product Code</param>
+            <returns>Collection of Receive Detail</returns>
+        </member>
+        <member name="M:DITS.HILI.WMS.ReceiveAPIs.Controllers.ReceiveController.getbypallet(System.Guid,System.String)">
+            <summary>
+             Get Receive Detail by pallet code
+            </summary>
+            <param name="palletCode">Pallet Code</param>
+            <returns>Collection of Receive Detail</returns>
+        </member>
+        <member name="M:DITS.HILI.WMS.ReceiveAPIs.Controllers.ReceiveController.receiving(DITS.HILI.WMS.ReceiveModel.Receiving)">
+            <summary>
+            Receiving Product
+            </summary>
+            <param name="entity">Receiving Model</param>
+            <returns>Ok</returns>
+        </member>
+        <member name="M:DITS.HILI.WMS.ReceiveAPIs.Controllers.ReceiveController.finishreceiving(System.Guid)">
+            <summary>
+            Finish Receiving list
+            </summary>
+            <param name="id">GRN ID</param>
+            <returns>Ok</returns>
+        </member>
+        <member name="M:DITS.HILI.WMS.ReceiveAPIs.Controllers.ReceiveController.getgrnlist(System.Guid)">
+            <summary>
+            Get GRN No List of receive
+            </summary>
+            <param name="receiveid">Receive ID</param>
+            <returns>Collection of GRN No</returns>
+        </member>
+        <member name="M:DITS.HILI.WMS.ReceiveAPIs.Controllers.ReceiveController.GetReceivingByGRNNo(System.String)">
+            <summary>
+            Get Receiving list by GRN No
+            </summary>
+            <param name="grnno">GRN No</param>
+            <returns>Collection of receiving</returns>
+        </member>
+    </members>
+</doc>

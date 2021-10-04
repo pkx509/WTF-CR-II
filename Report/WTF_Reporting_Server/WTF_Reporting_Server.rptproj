@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <FullPath>Debug</FullPath>
+    <OutputPath>bin\Debug</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>WTF_DEV_Report</TargetReportFolder>
+    <TargetDatasetFolder>WTF_DEV_Report/Datasets</TargetDatasetFolder>
+    <TargetDatasourceFolder>WTF_DEV_Report/DataSource</TargetDatasourceFolder>
+    <TargetReportPartFolder>WTF_DEV_Report</TargetReportPartFolder>
+    <TargetServerURL>http://localhost:9005/ReportServer</TargetServerURL>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'DebugLocal' ">
+    <FullPath>DebugLocal</FullPath>
+    <OutputPath>bin\DebugLocal</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>WTF_DEV_Report</TargetReportFolder>
+    <TargetDatasetFolder>WTF_DEV_Report/Datasets</TargetDatasetFolder>
+    <TargetDatasourceFolder>WTF_DEV_Report/DataSource</TargetDatasourceFolder>
+    <TargetReportPartFolder>WTF_DEV_Report</TargetReportPartFolder>
+    <TargetServerURL>http://172.16.14.42/ReportServer</TargetServerURL>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <FullPath>Release</FullPath>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorLevel>2</ErrorLevel>
+    <OverwriteDatasets>False</OverwriteDatasets>
+    <OverwriteDataSources>False</OverwriteDataSources>
+    <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+    <Platform>Win32</Platform>
+    <TargetReportFolder>WTF_DEV_Report</TargetReportFolder>
+    <TargetDatasetFolder>WTF_DEV_Report/Datasets</TargetDatasetFolder>
+    <TargetDatasourceFolder>WTF_DEV_Report/DataSource</TargetDatasourceFolder>
+    <TargetReportPartFolder>WTF_DEV_Report</TargetReportPartFolder>
+    <TargetServerURL>http://172.16.14.42/ReportServer</TargetServerURL>
+  </PropertyGroup>
+  <PropertyGroup>
+    <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkZGw1MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAiIHhtbG5zOmRkbDUwMF81MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAvNTAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD50cnVlPC9FbmFibGVkPg0KICA8UHJvamVjdE5hbWU+JC9EeW5hbWljIFdNUyBISUxJIDQuMi9SZXBvcnQvV1RGX1JlcG9ydGluZ19TZXJ2ZXI8L1Byb2plY3ROYW1lPg0KICA8QXV4UGF0aD5odHRwOi8vMTcyLjE2LjE0LjQ6ODA4MC90ZnMvZGl0c2NvbGxlY3Rpb248L0F1eFBhdGg+DQogIDxMb2NhbFBhdGg+LjwvTG9jYWxQYXRoPg0KICA8UHJvdmlkZXI+ezRDQTU4QUIyLTE4RkEtNEY4RC05NUQ0LTMyRERGMjdEMTg0Q308L1Byb3ZpZGVyPg0KPC9Tb3VyY2VDb250cm9sSW5mbz4=</State>
+    <DataSources>@(DataSource)</DataSources>
+    <DataSets>@(DataSet)</DataSets>
+    <Reports>@(Report)</Reports>
+  </PropertyGroup>
+  <ItemGroup>
+    <DataSource Include="datasource.rds" />
+  </ItemGroup>
+  <ItemGroup>
+    <Report Include="location.rdl" />
+    <Report Include="location_all.rdl" />
+    <Report Include="RPT_Aging.rdl" />
+    <Report Include="RPT_AssingForm.rdl" />
+    <Report Include="RPT_Balance.rdl" />
+    <Report Include="RPT_BalanceIdentity.rdl" />
+    <Report Include="RPT_BOI.rdl" />
+    <Report Include="RPT_Consolidate.rdl" />
+    <Report Include="RPT_ConsolidateForm.rdl" />
+    <Report Include="RPT_CycleCount.rdl" />
+    <Report Include="RPT_CycleCountForm.rdl" />
+    <Report Include="RPT_Damage.rdl" />
+    <Report Include="RPT_DispatchForm.rdl" />
+    <Report Include="RPT_Do_Stock_Inreceive_Head.rdl" />
+    <Report Include="RPT_Do_Stock_Inreceive_Line.rdl" />
+    <Report Include="RPT_Do_Stock_OutIssue_Head.rdl" />
+    <Report Include="RPT_Do_Stock_OutIssue_Line.rdl" />
+    <Report Include="RPT_ExpireWaitQA.rdl" />
+    <Report Include="RPT_Inspection.rdl" />
+    <Report Include="RPT_InspectionGoodsReturn.rdl" />
+    <Report Include="RPT_Location.rdl" />
+    <Report Include="RPT_Master_Data_Customer.rdl" />
+    <Report Include="RPT_Master_Data_Product.rdl" />
+    <Report Include="RPT_Master_Data_Product_Unit.rdl" />
+    <Report Include="RPT_PalletTags.rdl" />
+    <Report Include="RPT_PickingList.rdl" />
+    <Report Include="RPT_Receive.rdl" />
+    <Report Include="RPT_ReceiveForm.rdl" />
+    <Report Include="RPT_SafetyStock.rdl" />
+    <Report Include="RPT_Sales_Order_Addbatch_Head.rdl" />
+    <Report Include="RPT_Sales_Order_Addbatch_Line.rdl" />
+    <Report Include="RPT_Sales_Order_StockPick_Head.rdl" />
+    <Report Include="RPT_Sales_Order_StockPick_Line.rdl" />
+    <Report Include="RPT_StockCard.rdl" />
+    <Report Include="RPT_StockCount.rdl" />
+    <Report Include="RPT_StockIn.rdl" />
+    <Report Include="RPT_Stock_Reclass_Product_Lot_Head.rdl" />
+    <Report Include="RPT_Stock_Reclass_Product_Lot_Line.rdl" />
+    <Report Include="RPT_Stock_Reclass_Product_Sts_Head.rdl" />
+    <Report Include="RPT_Stock_Reclass_Product_Sts_Line.rdl" />
+    <Report Include="RPT_TransferMaketingForm.rdl" />
+    <Report Include="RPT_TransferWarehouse.rdl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
+</Project>

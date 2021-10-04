@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DITS.HILI.WMS.MasterModel</name>
+    </assembly>
+    <members>
+        <member name="T:DITS.HILI.WMS.MasterModel.BaseAssignJob">
+            <summary>
+            Assign job template base
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.MasterModel.BaseAssignJob.ReferenceID">
+            <summary>
+            Activity ID reference
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.MasterModel.BaseAssignJob.EmployeeID">
+            <summary>
+            Employee
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.MasterModel.BaseEntity.Remark">
+            <summary>
+            Remember 
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.MasterModel.BaseEntity.IsActive">
+            <summary>
+            Item status Active/In Active
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.MasterModel.BaseEntity.UserCreated">
+            <summary>
+            User create item
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.MasterModel.BaseEntity.DateCreated">
+            <summary>
+            Date created 
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.MasterModel.BaseEntity.UserModified">
+            <summary>
+            Last user modified item
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.MasterModel.BaseEntity.DateModified">
+            <summary>
+            Last date modified item
+            </summary>
+        </member>
+        <member name="T:DITS.HILI.WMS.MasterModel.Warehouses.ZoneConfig">
+            <summary>
+            รอตรวจสอบว่าจะเอาไปใช้ทำอะไร 19/04/2017
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.MasterModel.CustomModel.StockInOutModel.StockTransTypeEnum">
+            <summary>
+            default = 0
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.MasterModel.Products.ProductUnit.ConversionMark">
+            <summary>
+            defalut = 1 : 1 = multiply , 2 = divide
+            </summary>
+        </member>
+        <member name="T:DITS.HILI.WMS.MasterModel.DataTransfer">
+            <summary>
+            Data Transfer and receive stage
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.MasterModel.DataTransfer.ReferenceCode">
+            <summary>
+            Document Number Reference
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.MasterModel.DataTransfer.LineID">
+            <summary>
+            Item Line ID Reference
+            </summary>
+        </member>
+        <member name="T:DITS.HILI.WMS.MasterModel.Stock.StockReserveTypeEnum">
+            <summary>
+            Check Stock ReserveType
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.MasterModel.Stock.StockReserveTypeEnum.Reserve">
+            <summary>
+            Reserve = 0
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.MasterModel.Stock.StockReserveTypeEnum.UnReserve">
+            <summary>
+            UnReserve = 1
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.MasterModel.Utility.ItfTransactionType.ItfInterfaceMappings">
+            <summary>
+            Child ItfInterfaceMappings where [itf_interface_mapping].[InterfaceTypeID] point to this entity (FK_InterfaceTypeID)
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.MasterModel.Utility.Printer.PrinterLocationId">
+            <summary>
+            PrinterLocationID = LineID
+            </summary>
+        </member>
+    </members>
+</doc>

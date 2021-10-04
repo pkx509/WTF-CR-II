@@ -1,0 +1,404 @@
+﻿@{
+    ViewBag.Title = "Food Truck Queue System";
+}
+<div class="container-fluid" id="pn-dashboard">
+    <div class="col-sm-12">
+        <div class="main-section-content row">
+            <div id="employee-list" class="col col-6">
+                <div style="width:100%;text-align:center;font-size:34px;background-color:#000000;color:#ffffff;padding-bottom:5px;padding-top:10px;">
+                    <div class="row">
+                        <div class="col-sm-4" style="margin-left:-45px;">
+                            <img id="img-logo" src="~/Images/hili_logo.jpg" />
+                        </div>
+                        <div class="col-sm-8" style="color:#ffffff;font-size:34px;font-weight:800;margin-left:-55px;">
+                            กำลังรับ-ส่งของ
+                        </div>
+                    </div>
+                </div>
+                <div id="employees-list"></div>
+            </div>
+            <div id="queue-list" class="col col-6" style="padding-left:10px;">
+                <div style="width:100%;text-align:center;font-size:34px;background-color:#000000;color:#ffffff;padding-bottom:20px;padding-top:10px;">
+                    <div class="row">
+                        <div class="col-sm-12" id="dvwaitQueue" style="color:#ffffff;font-size:34px;font-weight:800;margin-left:-40px;">
+                            กำลังรอ
+                        </div>
+                    </div>
+                </div>
+                <div class="employee">
+                    <div class="employee-wrapper">
+                        <div class="row" style="margin-top:25px;">
+                            <div class="col-3 caption" style="text-align:center">ปลายทาง</div>
+                            <div class="col-3 caption" style="text-align:center">ทะเบียนรถ</div>
+                            <div class="col-3 caption" style="text-align:center">บริษัท </div>
+                            <div class="col-3 caption" style="text-align:center">สถานะ </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="queues-list"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12" style="color:#ffffff;font-size:34px;font-weight:600;position:absolute;bottom: 0px;margin-top:15px;margin-bottom:5px;">
+        <marquee id="mq-contents" style="width:100%"> </marquee>
+    </div>
+    @*<input type="button" id="btnInterac" />*@
+    <div style="display:none">
+        <audio id="audio"
+               webkit-playsinline="true"
+               playsinline="true"
+               allow="autoplay"
+               onended="OnEndPlaying()" controls preload='none'>
+            <source id='WaveSrc' type='audio/wav' />
+        </audio>
+    </div>
+</div>
+@section scripts{
+    <script src="@Url.Content("~/lib/signalr/jquery.signalR.min.js")"></script>
+    <script src="@Url.Content("~/signalr/hubs")"></script>
+    <script src="@Url.Content("~/lib/pizzicato/Pizzicato.min.js")"></script>
+    <script type="text/x-kendo-tmpl" id="employeeItemTemplate">
+        #if(QueueStatusID == 6) {#
+        <div class="employee-active">
+            <div class="employee-wrapper">
+                <div class="row" style="margin-top:5px;">
+                    <div class="col-3 caption" style="text-align:center"></div>
+                    <div class="col-3 caption" style="text-align:center">ทะเบียนรถ</div>
+                    <div class="col-3 caption" style="text-align:center">บริษัท</div>
+                    #if(QueueStatusID != 6 && QueueStatusID != 7 && QueueStatusID != 5){#
+                    <div class="col-3 caption" style="text-align:center">เวลาโดยประมาณ </div>
+                    #}#
+                </div>
+                <div class="row" style="margin-bottom:-15px;" id="row-Queue-#:QueueId# ">
+                    <div class="col-3 name" style="text-align:center;margin-top:-25px;"> #:QueueDock# </div>
+                    <div class="col-3 name" style="text-align:center"> #:TruckRegNo# </div>
+                    <div class="col-3 name" style="text-align:center"> #:ShipFrom# </div>
+                    #if(QueueStatusID == 6 || QueueStatusID == 7 || QueueStatusID == 5){#
+                    <div class="col-3 name" style="text-align:center;margin-top:-25px;"> #:QueueStatus#</div>
+                    #}else{#
+                    <div class="col-3 name" style="text-align:center"> #:RemainingTime# นาที</div>
+                    #}#
+                </div>
+            </div>
+        </div>
+        #}else{#
+        <div class="employee">
+            <div class="employee-wrapper">
+                <div class="row" style="margin-top:5px;">
+                    <div class="col-3 caption" style="text-align:center"></div>
+                    <div class="col-3 caption" style="text-align:center">ทะเบียนรถ</div>
+                    <div class="col-3 caption" style="text-align:center">บริษัท</div>
+                    #if(QueueStatusID != 6 && QueueStatusID != 5){#
+                    <div class="col-3 caption" style="text-align:center">เวลาโดยประมาณ</div>
+                    #}#
+                </div>
+                #if(QueueStatusID < 5) {#
+                <div class="row" style="margin-bottom:-15px;" id="row-Queue-#:QueueId# ">
+                    <div class="col-3 name divmsg" style="text-align:center;margin-top:-25px;"> #:QueueDock# </div>
+                    <div class="col-3 name divmsg" style="text-align:center"> #:TruckRegNo# </div>
+                    <div class="col-3 name divmsg" style="text-align:center"> #:ShipFrom# </div>
+                    #if(QueueStatusID == 6 || QueueStatusID == 5){#
+                    <div class="col-3 name divmsg" style="text-align:center;margin-top:-25px;"> #:QueueStatus#</div>
+                    #}else{#
+                    <div class="col-3 name divmsg" style="text-align:center"> #:RemainingTime# นาที</div>
+                    #}#
+                </div>
+                #}else{#
+                <div class="row" style="margin-bottom:-15px;" id="row-Queue-#:QueueId# ">
+                    <div class="col-3 name" style="text-align:center;margin-top:-25px;"> #:QueueDock# </div>
+                    <div class="col-3 name" style="text-align:center"> #:TruckRegNo# </div>
+                    <div class="col-3 name" style="text-align:center"> #:ShipFrom# </div>
+                    #if(QueueStatusID == 6 || QueueStatusID == 5){#
+                    <div class="col-3 name" style="text-align:center;margin-top:-25px;"> #:QueueStatus#</div>
+                    #}else{#
+                    <div class="col-3 name" style="text-align:center"> #:RemainingTime# นาที</div>
+                    #}#
+                </div>
+                #}#
+            </div>
+        </div>
+        #}#
+    </script>
+    <script type="text/x-kendo-tmpl" id="queueItemTemplate">
+        <div class="employee-right">
+            <div class="employee-wrapper">
+                <div class="row" style="margin-bottom:-10px;margin-top:-10px;" id="row-Queue-#:QueueId# ">
+                    #if(QueueNo=='XXXX'){#
+                    <div class="col-3 name-2 black" style="text-align:center;color:transparent;">#:ShippTo#</div>
+                    #}else{#
+                    <div class="col-3 name-2 black" style="text-align:center;"> #:ShippTo# </div>
+                    #}#
+                    <div class="col-3 name-2 black" style="text-align:center"> #:TruckRegNo# </div>
+                    <div class="col-3 name-2 black" style="text-align:center"> #:ShipFrom#  </div>
+                    <div class="col-3 name-2 black" style="text-align:center"> #:QueueStatus#</div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script>
+
+        //var audioContext = new AudioContext();
+        var elem = document.documentElement;
+        var isRefresing = false;
+        var isPlaying = false;
+        var playList = [];
+        $(document).ready(function () {
+            baseUrl = '@Url.Content("~/")';
+            LoadWaiting();
+            LoadInQueue();
+            InitializeSignalR();
+            RefreshConfig();
+            setInterval('RefreshInQueue();', 36000);
+            setInterval('blinkMessage();', 1000);
+            //$("#btnInterac").trigger('click');
+        });
+        function openFullscreen() {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) { /* Safari */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE11 */
+                elem.msRequestFullscreen();
+            }
+        }
+        /* Close fullscreen */
+        function closeFullscreen() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) { /* Safari */
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) { /* IE11 */
+                document.msExitFullscreen();
+            }
+        }
+        function StartSignalR() {
+            $.connection.hub.start("/signalr")
+            .done(function () {
+                console.log('SignalR Started.');
+            }).fail(function () {
+                console.log('SignalR Start failed.');
+            });
+        }
+
+        function InitializeSignalR() {
+            StartSignalR();
+            $.connection.hub.disconnected(function () {
+                setTimeout(function () {
+                    StartSignalR();
+                }, 5000);
+            });
+            var singlaRmonitor = $.connection.queueHub;
+
+            singlaRmonitor.client.CallQueue = function (file) {
+                console.log("Call Queue " + file);
+                playList.push(file);
+                console.log(playList);
+                if (!isPlaying) {
+                    PlayWave();
+                }
+                RefreshInQueue();
+                RefreshWaiting();
+            };
+            singlaRmonitor.client.CompletedQueue = function (file) {
+                console.log("Completed Queue ");
+                RefreshInQueue();
+                playList.push(file);
+               if (!isPlaying) {
+                    PlayWave();
+                }
+            };
+            singlaRmonitor.client.ChangedAnounce = function (message, enable) {
+                if (enable) {
+                    $("#mq-contents")[0].innerHTML = message;
+                    $("#mq-contents")[0].innerText = message;
+                    $("#mq-contents")[0].start();
+                } else {
+                    $("#mq-contents")[0].innerHTML = "";
+                    $("#mq-contents")[0].innerText = "";
+                    $("#mq-contents")[0].stop();
+                }
+            };
+            singlaRmonitor.client.RefreshQueue = function () {
+                console.log("Refresh Queue ");
+                RefreshInQueue();
+                RefreshWaiting();
+            };
+        }
+        function RefreshConfig() {
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("GetQueueConfiguration", "Home")",
+                success: function (response) {
+                    if (response.EnableMessage) {
+                        $("#mq-contents")[0].innerHTML = response.Message;
+                        $("#mq-contents")[0].innerText = response.Message;
+                        $("#mq-contents")[0].start();
+                    } else {
+                        $("#mq-contents")[0].innerHTML = "";
+                        $("#mq-contents")[0].innerText = "";
+                        $("#mq-contents")[0].stop();
+                    }
+                }
+            });
+        }
+
+        function RefreshInQueue() {
+            var listView = $("#employees-list").data("kendoListView");
+            listView.dataSource.read();
+            listView.refresh();
+        }
+
+        function RefreshWaiting() {
+            var listView = $("#queues-list").data("kendoListView");
+            listView.dataSource.read();
+            listView.refresh();
+            var currentPage = listView.dataSource.page();
+            listView.dataSource.page(currentPage);
+        }
+
+        function LoadInQueue() {
+            $("#employees-list").kendoListView({
+                dataSource: dataSourceInQueue,
+                template: kendo.template($("#employeeItemTemplate").html()),
+                serverPaging: false,
+                serverFiltering: false,
+                serverSorting: false,
+                selectable: false
+            });
+        }
+
+        function LoadWaiting() {
+            $("#queues-list").kendoListView({
+                dataSource: dataSourceWaitQueue,
+                template: kendo.template($("#queueItemTemplate").html()),
+                serverPaging: false,
+                serverFiltering: false,
+                serverSorting: false,
+                selectable: false,
+                dataBound: function (e) {
+                    setTimeout(function () {
+                        var currentPage = e.sender.dataSource.page();
+                        if (currentPage >= e.sender.dataSource.totalPages()) {
+                            currentPage = 0;
+                        }
+                        e.sender.dataSource.page(currentPage + 1);
+                    }, 18000);
+                }
+            });
+        }
+
+        function OnEndPlaying() {
+            console.log("Play End.");
+            isPlaying = false;
+            PlayWave();
+        }
+
+        function PlayAudio(srcUrl) {
+            console.log("Play Start.");
+            isPlaying = true;
+            var APlayer = document.getElementById("audio");
+            var targetUrl = srcUrl;
+            var url = window.location.protocol + '//' + window.location.hostname + ":" + window.location.port + window.location.pathname + window.location.hash;
+            if (window.location.port == "") {
+                url = window.location.protocol + '//' + window.location.hostname + window.location.pathname + window.location.hash;
+            }
+            if (url.endsWith("/")) {
+                targetUrl = targetUrl.replace("~/", url);
+            } else {
+                targetUrl = targetUrl.replace("~/", url + "/");
+            }
+            targetUrl = targetUrl.replace("Home/", "");
+            targetUrl = targetUrl.replace("Index/", "");
+            try {
+                APlayer.src = targetUrl;
+                APlayer.load();
+                APlayer.volume = 1.0;
+                APlayer.play();
+            } catch (err) {
+                //$("#btnInterac").trigger('click');
+                PlayWave();
+            }
+        }
+
+        function PlayWave() {
+            if (playList.length > 0) {
+                var filePlay = playList[0];
+                playList.shift();
+                PlayAudio(filePlay);
+            }
+        }
+
+        function blinkMessage() {
+            $(".divmsg").toggleClass("divred");
+        }
+
+        var dataSourceWaitQueue = new kendo.data.DataSource({
+            transport: {
+                        read: {
+                            url: "@Url.Action("GetWaitingQueue", "Home")",
+                            type: "GET"
+                        }
+                        , schema: {
+                            model: {
+                                fields: {
+                                    QueueId: { type: "int", editable: false },
+                                    QueueNo: { type: "string", editable: false },
+                                    EstimateTime: { type: "int", editable: false },
+                                    TruckRegNo: { type: "string", editable: false },
+                                    TimeIn: { type: "datetime", editable: false },
+                                    QueueDock: { type: "string", editable: false },
+                                    QueueStatus: { type: "string", editable: false },
+                                    TruckRegProvice: { type: "string", editable: false },
+                                    ShipFrom: { type: "string", editable: false },
+                                    ShippTo: { type: "string", editable: false },
+                                    RemainingTime: { type: "int", editable: false },
+                                    TimeInString: { type: "string", editable: false }
+                                }
+                            }
+                        }
+                    },
+                    sort: [
+                        { field: "QueueNo", dir: "asc" },
+                        { field: "TimeIn", dir: "asc" }
+                    ],
+                    pageSize: 16
+         });
+         var dataSourceInQueue = new kendo.data.DataSource({
+            transport: {
+                        read: {
+                            url: "@Url.Action("GetInQueue", "Home")",
+                            type: "GET"
+                        }
+                        , schema: {
+                            model: {
+                                fields: {
+                                    QueueId: { type: "int", editable: false },
+                                    QueueNo: { type: "string", editable: false },
+                                    EstimateTime: { type: "int", editable: false },
+                                    TruckRegNo: { type: "string", editable: false },
+                                    TimeIn: { type: "datetime", editable: false },
+                                    QueueDock: { type: "string", editable: false },
+                                    QueueStatus: { type: "string", editable: false },
+                                    TruckRegProvice: { type: "string", editable: false },
+                                    ShipFrom: { type: "string", editable: false },
+                                    ShippTo: { type: "string", editable: false },
+                                    RemainingTime: { type: "int", editable: false },
+                                    TimeInString: { type: "string", editable: false }
+                                }
+                            }
+                        }
+                    },
+                    sort: [
+                        { field: "QueueDock", dir: "asc" }
+                    ],
+                    pageSize: 9
+         });
+    </script>
+
+    <script>
+        $(function () {
+            $('#mq-contents').trigger('click');
+        })
+    </script>
+} 

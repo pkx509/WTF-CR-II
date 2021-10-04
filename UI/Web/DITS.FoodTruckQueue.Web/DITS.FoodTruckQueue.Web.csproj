@@ -1,0 +1,1371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DC5DD953-A225-4CDA-BBB7-55899767AA0E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DITS.FoodTruckQueue.Web</RootNamespace>
+    <AssemblyName>DITS.FoodTruckQueue.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TypeScriptToolsVersion>4.0</TypeScriptToolsVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.95.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\ClosedXML.0.95.3\lib\net40\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.SignalR.Core.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.1\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Hubs\ConnectionMapping.cs" />
+    <Compile Include="Models\PlayModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Hubs\QueueHub.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\queue.png" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\backorder.png" />
+    <Content Include="Images\bo.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\headerreportlogo.jpg" />
+    <Content Include="Images\hili_logo.jpg" />
+    <Content Include="Images\no.png" />
+    <Content Include="Images\printer.png" />
+    <Content Include="Images\tick.png" />
+    <Content Include="lib\howler.js\dist\howler.core.min.js" />
+    <Content Include="lib\howler.js\dist\howler.js" />
+    <Content Include="lib\howler.js\dist\howler.min.js" />
+    <Content Include="lib\howler.js\dist\howler.spatial.min.js" />
+    <Content Include="lib\howler.js\examples\3d\assets\gun.png" />
+    <Content Include="lib\howler.js\examples\3d\assets\skybox.jpg" />
+    <Content Include="lib\howler.js\examples\3d\assets\speaker.jpg" />
+    <Content Include="lib\howler.js\examples\3d\assets\sprite.mp3" />
+    <Content Include="lib\howler.js\examples\3d\assets\sprite.webm" />
+    <Content Include="lib\howler.js\examples\3d\assets\wall.jpg" />
+    <Content Include="lib\howler.js\examples\3d\index.html" />
+    <Content Include="lib\howler.js\examples\3d\js\camera.js" />
+    <Content Include="lib\howler.js\examples\3d\js\controls.js" />
+    <Content Include="lib\howler.js\examples\3d\js\game.js" />
+    <Content Include="lib\howler.js\examples\3d\js\map.js" />
+    <Content Include="lib\howler.js\examples\3d\js\player.js" />
+    <Content Include="lib\howler.js\examples\3d\js\sound.js" />
+    <Content Include="lib\howler.js\examples\3d\js\texture.js" />
+    <Content Include="lib\howler.js\examples\3d\styles.css" />
+    <Content Include="lib\howler.js\examples\player\audio\80s_vibe.mp3" />
+    <Content Include="lib\howler.js\examples\player\audio\80s_vibe.webm" />
+    <Content Include="lib\howler.js\examples\player\audio\rave_digger.mp3" />
+    <Content Include="lib\howler.js\examples\player\audio\rave_digger.webm" />
+    <Content Include="lib\howler.js\examples\player\audio\running_out.mp3" />
+    <Content Include="lib\howler.js\examples\player\audio\running_out.webm" />
+    <Content Include="lib\howler.js\examples\player\index.html" />
+    <Content Include="lib\howler.js\examples\player\player.js" />
+    <Content Include="lib\howler.js\examples\player\siriwave.js" />
+    <Content Include="lib\howler.js\examples\player\styles.css" />
+    <Content Include="lib\howler.js\examples\radio\index.html" />
+    <Content Include="lib\howler.js\examples\radio\radio.js" />
+    <Content Include="lib\howler.js\examples\radio\styles.css" />
+    <Content Include="lib\howler.js\examples\sprite\index.html" />
+    <Content Include="lib\howler.js\examples\sprite\sprite.js" />
+    <Content Include="lib\howler.js\examples\sprite\styles.css" />
+    <Content Include="lib\jPlayer-2.9.2\.gitignore" />
+    <Content Include="lib\jPlayer-2.9.2\dist\add-on\jplayer.playlist.js" />
+    <Content Include="lib\jPlayer-2.9.2\dist\add-on\jplayer.playlist.min.js" />
+    <Content Include="lib\jPlayer-2.9.2\dist\add-on\jquery.jplayer.inspector.js" />
+    <Content Include="lib\jPlayer-2.9.2\dist\add-on\jquery.jplayer.inspector.min.js" />
+    <Content Include="lib\jPlayer-2.9.2\dist\jplayer\jquery.jplayer.js" />
+    <Content Include="lib\jPlayer-2.9.2\dist\jplayer\jquery.jplayer.min.js" />
+    <Content Include="lib\jPlayer-2.9.2\dist\jplayer\jquery.jplayer.swf" />
+    <Content Include="lib\jPlayer-2.9.2\dist\popcorn\popcorn.jplayer.js" />
+    <Content Include="lib\jPlayer-2.9.2\dist\popcorn\popcorn.jplayer.min.js" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\blue.monday\css\jplayer.blue.monday.css" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\blue.monday\css\jplayer.blue.monday.min.css" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\blue.monday\image\jplayer.blue.monday.jpg" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\blue.monday\image\jplayer.blue.monday.seeking.gif" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\blue.monday\image\jplayer.blue.monday.video.play.png" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\blue.monday\mustache\jplayer.blue.monday.audio.playlist.html" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\blue.monday\mustache\jplayer.blue.monday.audio.single.html" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\blue.monday\mustache\jplayer.blue.monday.audio.stream.html" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\blue.monday\mustache\jplayer.blue.monday.video.playlist.html" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\blue.monday\mustache\jplayer.blue.monday.video.single.html" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\pink.flag\css\jplayer.pink.flag.css" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\pink.flag\css\jplayer.pink.flag.min.css" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\pink.flag\image\jplayer.pink.flag.jpg" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\pink.flag\image\jplayer.pink.flag.seeking.gif" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\pink.flag\image\jplayer.pink.flag.video.play.png" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\pink.flag\mustache\jplayer.pink.flag.audio.playlist.html" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\pink.flag\mustache\jplayer.pink.flag.audio.single.html" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\pink.flag\mustache\jplayer.pink.flag.audio.stream.html" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\pink.flag\mustache\jplayer.pink.flag.video.playlist.html" />
+    <Content Include="lib\jPlayer-2.9.2\dist\skin\pink.flag\mustache\jplayer.pink.flag.video.single.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-01-android.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-01-solution-flash-html.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-01-supplied-mp3.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-01-video-solution-flash-html.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-01-video-supplied-m4v.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-01-video-supplied-rtmpv.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-01-video.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-01.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-02-jPlayerPlaylist.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-02-media-solution-flash-html.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-02-media.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-02-multi.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-02-video.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-02.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-03-together.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-03-video.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-03.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-08.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-09-popcorn-video-solution-flash-html.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\demo-09-popcorn-video.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\blue.monday\jPlayer-tester.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\other\demo-04.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\other\demo-05.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\other\demo-07.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-01-android.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-01-solution-flash-html.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-01-supplied-mp3.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-01-video-solution-flash-html.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-01-video-supplied-m4v.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-01-video-supplied-rtmpv.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-01-video.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-01.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-02-jPlayerPlaylist.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-02-media-solution-flash-html.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-02-media.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-02-multi.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-02-video.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-02.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-03-together.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-03-video.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-03.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-08.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-09-popcorn-video-solution-flash-html.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\demo-09-popcorn-video.html" />
+    <Content Include="lib\jPlayer-2.9.2\examples\pink.flag\jPlayer-tester.html" />
+    <Content Include="lib\jPlayer-2.9.2\Gruntfile.js" />
+    <Content Include="lib\jPlayer-2.9.2\lib\aurora\aac.js" />
+    <Content Include="lib\jPlayer-2.9.2\lib\aurora\aurora.js" />
+    <Content Include="lib\jPlayer-2.9.2\lib\aurora\flac.js" />
+    <Content Include="lib\jPlayer-2.9.2\lib\aurora\mp3.js" />
+    <Content Include="lib\jPlayer-2.9.2\lib\aurora\ogg.js" />
+    <Content Include="lib\jPlayer-2.9.2\lib\aurora\opus.js" />
+    <Content Include="lib\jPlayer-2.9.2\lib\aurora\vorbis.js" />
+    <Content Include="lib\jPlayer-2.9.2\lib\circle-player\js\circle.player.js" />
+    <Content Include="lib\jPlayer-2.9.2\lib\circle-player\js\jquery.grab.js" />
+    <Content Include="lib\jPlayer-2.9.2\lib\circle-player\js\jquery.transform2d.js" />
+    <Content Include="lib\jPlayer-2.9.2\lib\circle-player\js\mod.csstransforms.min.js" />
+    <Content Include="lib\jPlayer-2.9.2\lib\circle-player\skin\bgr.jpg" />
+    <Content Include="lib\jPlayer-2.9.2\lib\circle-player\skin\buffer.png" />
+    <Content Include="lib\jPlayer-2.9.2\lib\circle-player\skin\circle.player.css" />
+    <Content Include="lib\jPlayer-2.9.2\lib\circle-player\skin\controls.jpg" />
+    <Content Include="lib\jPlayer-2.9.2\lib\circle-player\skin\progress.png" />
+    <Content Include="lib\jPlayer-2.9.2\lib\circle-player\skin\progress_sprite.jpg" />
+    <Content Include="lib\jPlayer-2.9.2\lib\jquery.min.js" />
+    <Content Include="lib\jPlayer-2.9.2\lib\popcorn.ie8.js" />
+    <Content Include="lib\jPlayer-2.9.2\lib\popcorn.js" />
+    <Content Include="lib\jPlayer-2.9.2\lib\popcorn.player.js" />
+    <Content Include="lib\jPlayer-2.9.2\lib\popcorn.subtitle.js" />
+    <Content Include="lib\jPlayer-2.9.2\MIT-LICENSE.txt" />
+    <Content Include="lib\jPlayer-2.9.2\src\javascript\add-on\jplayer.playlist.js" />
+    <Content Include="lib\jPlayer-2.9.2\src\javascript\add-on\jquery.jplayer.inspector.js" />
+    <Content Include="lib\jPlayer-2.9.2\src\javascript\jplayer\jquery.jplayer.js" />
+    <Content Include="lib\jPlayer-2.9.2\src\javascript\popcorn\popcorn.jplayer.js" />
+    <Content Include="lib\jPlayer-2.9.2\src\skin\blue.monday\image\jplayer.blue.monday.jpg" />
+    <Content Include="lib\jPlayer-2.9.2\src\skin\blue.monday\image\jplayer.blue.monday.seeking.gif" />
+    <Content Include="lib\jPlayer-2.9.2\src\skin\blue.monday\image\jplayer.blue.monday.video.play.png" />
+    <Content Include="lib\jPlayer-2.9.2\src\skin\blue.monday\mustache\jplayer.blue.monday.audio.playlist.html" />
+    <Content Include="lib\jPlayer-2.9.2\src\skin\blue.monday\mustache\jplayer.blue.monday.audio.single.html" />
+    <Content Include="lib\jPlayer-2.9.2\src\skin\blue.monday\mustache\jplayer.blue.monday.audio.stream.html" />
+    <Content Include="lib\jPlayer-2.9.2\src\skin\blue.monday\mustache\jplayer.blue.monday.video.playlist.html" />
+    <Content Include="lib\jPlayer-2.9.2\src\skin\blue.monday\mustache\jplayer.blue.monday.video.single.html" />
+    <Content Include="lib\jPlayer-2.9.2\src\skin\pink.flag\image\jplayer.pink.flag.jpg" />
+    <Content Include="lib\jPlayer-2.9.2\src\skin\pink.flag\image\jplayer.pink.flag.seeking.gif" />
+    <Content Include="lib\jPlayer-2.9.2\src\skin\pink.flag\image\jplayer.pink.flag.video.play.png" />
+    <Content Include="lib\jPlayer-2.9.2\src\skin\pink.flag\mustache\jplayer.pink.flag.audio.playlist.html" />
+    <Content Include="lib\jPlayer-2.9.2\src\skin\pink.flag\mustache\jplayer.pink.flag.audio.single.html" />
+    <Content Include="lib\jPlayer-2.9.2\src\skin\pink.flag\mustache\jplayer.pink.flag.audio.stream.html" />
+    <Content Include="lib\jPlayer-2.9.2\src\skin\pink.flag\mustache\jplayer.pink.flag.video.playlist.html" />
+    <Content Include="lib\jPlayer-2.9.2\src\skin\pink.flag\mustache\jplayer.pink.flag.video.single.html" />
+    <Content Include="lib\pizzicato\Pizzicato.js" />
+    <Content Include="lib\pizzicato\Pizzicato.min.js" />
+    <Content Include="lib\SoundJS\examples\00_Basics.html" />
+    <Content Include="lib\SoundJS\examples\01_LoadWithPreloadJS.html" />
+    <Content Include="lib\SoundJS\examples\02_PlayOnClick.html" />
+    <Content Include="lib\SoundJS\examples\03_PlayWithEaselJS.html" />
+    <Content Include="lib\SoundJS\examples\04_SoundTween.html" />
+    <Content Include="lib\SoundJS\examples\05_AudioSprite.html" />
+    <Content Include="lib\SoundJS\examples\07_WebAudioNodeInsertion.html" />
+    <Content Include="lib\SoundJS\examples\Game\Game.html" />
+    <Content Include="lib\SoundJS\examples\Game\Ship.js" />
+    <Content Include="lib\SoundJS\examples\Game\sounds\break.mp3" />
+    <Content Include="lib\SoundJS\examples\Game\sounds\break.ogg" />
+    <Content Include="lib\SoundJS\examples\Game\sounds\death.mp3" />
+    <Content Include="lib\SoundJS\examples\Game\sounds\death.ogg" />
+    <Content Include="lib\SoundJS\examples\Game\sounds\music.mp3" />
+    <Content Include="lib\SoundJS\examples\Game\sounds\music.ogg" />
+    <Content Include="lib\SoundJS\examples\Game\sounds\shot.mp3" />
+    <Content Include="lib\SoundJS\examples\Game\sounds\shot.ogg" />
+    <Content Include="lib\SoundJS\examples\Game\sounds\spawn.mp3" />
+    <Content Include="lib\SoundJS\examples\Game\sounds\spawn.ogg" />
+    <Content Include="lib\SoundJS\examples\Game\SpaceRock.js" />
+    <Content Include="lib\SoundJS\examples\MediaPlayer\art\buttonPause.png" />
+    <Content Include="lib\SoundJS\examples\MediaPlayer\art\buttonPauseHover.png" />
+    <Content Include="lib\SoundJS\examples\MediaPlayer\art\buttonPlay.png" />
+    <Content Include="lib\SoundJS\examples\MediaPlayer\art\buttonPlayHover.png" />
+    <Content Include="lib\SoundJS\examples\MediaPlayer\art\buttonStop.png" />
+    <Content Include="lib\SoundJS\examples\MediaPlayer\art\buttonStopHover.png" />
+    <Content Include="lib\SoundJS\examples\MediaPlayer\art\player.png" />
+    <Content Include="lib\SoundJS\examples\MediaPlayer\art\scrubberPlayhead.png" />
+    <Content Include="lib\SoundJS\examples\MediaPlayer\art\scubberBar.png" />
+    <Content Include="lib\SoundJS\examples\MediaPlayer\MediaPlayer.html" />
+    <Content Include="lib\SoundJS\examples\TestSuite.html" />
+    <Content Include="lib\SoundJS\lib\cordovaaudioplugin-NEXT.js" />
+    <Content Include="lib\SoundJS\lib\cordovaaudioplugin-NEXT.min.js" />
+    <Content Include="lib\SoundJS\lib\cordovaaudioplugin.js" />
+    <Content Include="lib\SoundJS\lib\cordovaaudioplugin.min.js" />
+    <Content Include="lib\SoundJS\lib\flashaudioplugin-NEXT.js" />
+    <Content Include="lib\SoundJS\lib\flashaudioplugin-NEXT.min.js" />
+    <Content Include="lib\SoundJS\lib\flashaudioplugin.js" />
+    <Content Include="lib\SoundJS\lib\flashaudioplugin.min.js" />
+    <Content Include="lib\SoundJS\lib\soundjs-NEXT.js" />
+    <Content Include="lib\SoundJS\lib\soundjs-NEXT.min.js" />
+    <Content Include="lib\SoundJS\lib\soundjs.js" />
+    <Content Include="lib\SoundJS\lib\soundjs.min.js" />
+    <Content Include="Content\favicon.ico" />
+    <Content Include="Content\fonts\icomoon.svg" />
+    <Content Include="Content\kendo\2020.1.114\Black\editor.png" />
+    <Content Include="Content\kendo\2020.1.114\Black\imagebrowser.png" />
+    <Content Include="Content\kendo\2020.1.114\Black\indeterminate.gif" />
+    <Content Include="Content\kendo\2020.1.114\Black\loading-image.gif" />
+    <Content Include="Content\kendo\2020.1.114\Black\loading.gif" />
+    <Content Include="Content\kendo\2020.1.114\Black\loading_2x.gif" />
+    <Content Include="Content\kendo\2020.1.114\Black\markers.png" />
+    <Content Include="Content\kendo\2020.1.114\Black\markers_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Black\slider-h.gif" />
+    <Content Include="Content\kendo\2020.1.114\Black\slider-v.gif" />
+    <Content Include="Content\kendo\2020.1.114\Black\sprite.png" />
+    <Content Include="Content\kendo\2020.1.114\Black\sprite_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Black\sprite_kpi.png" />
+    <Content Include="Content\kendo\2020.1.114\Black\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\BlueOpal\editor.png" />
+    <Content Include="Content\kendo\2020.1.114\BlueOpal\imagebrowser.png" />
+    <Content Include="Content\kendo\2020.1.114\BlueOpal\indeterminate.gif" />
+    <Content Include="Content\kendo\2020.1.114\BlueOpal\loading-image.gif" />
+    <Content Include="Content\kendo\2020.1.114\BlueOpal\loading.gif" />
+    <Content Include="Content\kendo\2020.1.114\BlueOpal\loading_2x.gif" />
+    <Content Include="Content\kendo\2020.1.114\BlueOpal\markers.png" />
+    <Content Include="Content\kendo\2020.1.114\BlueOpal\markers_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\BlueOpal\slider-h.gif" />
+    <Content Include="Content\kendo\2020.1.114\BlueOpal\slider-v.gif" />
+    <Content Include="Content\kendo\2020.1.114\BlueOpal\sprite.png" />
+    <Content Include="Content\kendo\2020.1.114\BlueOpal\sprite_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\BlueOpal\sprite_kpi.png" />
+    <Content Include="Content\kendo\2020.1.114\BlueOpal\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Bootstrap\editor.png" />
+    <Content Include="Content\kendo\2020.1.114\Bootstrap\imagebrowser.png" />
+    <Content Include="Content\kendo\2020.1.114\Bootstrap\indeterminate.gif" />
+    <Content Include="Content\kendo\2020.1.114\Bootstrap\loading-image.gif" />
+    <Content Include="Content\kendo\2020.1.114\Bootstrap\loading.gif" />
+    <Content Include="Content\kendo\2020.1.114\Bootstrap\loading_2x.gif" />
+    <Content Include="Content\kendo\2020.1.114\Bootstrap\markers.png" />
+    <Content Include="Content\kendo\2020.1.114\Bootstrap\markers_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Bootstrap\slider-h.gif" />
+    <Content Include="Content\kendo\2020.1.114\Bootstrap\slider-v.gif" />
+    <Content Include="Content\kendo\2020.1.114\Bootstrap\sprite.png" />
+    <Content Include="Content\kendo\2020.1.114\Bootstrap\sprite_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Bootstrap\sprite_kpi.png" />
+    <Content Include="Content\kendo\2020.1.114\Bootstrap\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Default\editor.png" />
+    <Content Include="Content\kendo\2020.1.114\Default\imagebrowser.png" />
+    <Content Include="Content\kendo\2020.1.114\Default\indeterminate.gif" />
+    <Content Include="Content\kendo\2020.1.114\Default\loading-image.gif" />
+    <Content Include="Content\kendo\2020.1.114\Default\loading.gif" />
+    <Content Include="Content\kendo\2020.1.114\Default\loading_2x.gif" />
+    <Content Include="Content\kendo\2020.1.114\Default\markers.png" />
+    <Content Include="Content\kendo\2020.1.114\Default\markers_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Default\slider-h.gif" />
+    <Content Include="Content\kendo\2020.1.114\Default\slider-v.gif" />
+    <Content Include="Content\kendo\2020.1.114\Default\sprite.png" />
+    <Content Include="Content\kendo\2020.1.114\Default\sprite_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Default\sprite_kpi.png" />
+    <Content Include="Content\kendo\2020.1.114\Default\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Fiori\editor.png" />
+    <Content Include="Content\kendo\2020.1.114\Fiori\imagebrowser.png" />
+    <Content Include="Content\kendo\2020.1.114\Fiori\indeterminate.gif" />
+    <Content Include="Content\kendo\2020.1.114\Fiori\loading-image.gif" />
+    <Content Include="Content\kendo\2020.1.114\Fiori\loading.gif" />
+    <Content Include="Content\kendo\2020.1.114\Fiori\loading_2x.gif" />
+    <Content Include="Content\kendo\2020.1.114\Fiori\markers.png" />
+    <Content Include="Content\kendo\2020.1.114\Fiori\markers_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Fiori\slider-h.gif" />
+    <Content Include="Content\kendo\2020.1.114\Fiori\slider-v.gif" />
+    <Content Include="Content\kendo\2020.1.114\Fiori\sprite.png" />
+    <Content Include="Content\kendo\2020.1.114\Fiori\sprite_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Fiori\sprite_kpi.png" />
+    <Content Include="Content\kendo\2020.1.114\Fiori\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Flat\editor.png" />
+    <Content Include="Content\kendo\2020.1.114\Flat\imagebrowser.png" />
+    <Content Include="Content\kendo\2020.1.114\Flat\indeterminate.gif" />
+    <Content Include="Content\kendo\2020.1.114\Flat\loading-image.gif" />
+    <Content Include="Content\kendo\2020.1.114\Flat\loading.gif" />
+    <Content Include="Content\kendo\2020.1.114\Flat\loading_2x.gif" />
+    <Content Include="Content\kendo\2020.1.114\Flat\markers.png" />
+    <Content Include="Content\kendo\2020.1.114\Flat\markers_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Flat\slider-h.gif" />
+    <Content Include="Content\kendo\2020.1.114\Flat\slider-v.gif" />
+    <Content Include="Content\kendo\2020.1.114\Flat\sprite.png" />
+    <Content Include="Content\kendo\2020.1.114\Flat\sprite_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Flat\sprite_kpi.png" />
+    <Content Include="Content\kendo\2020.1.114\Flat\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\fonts\DejaVu\LICENSE.txt" />
+    <Content Include="Content\kendo\2020.1.114\fonts\glyphs\KendoUIGlyphs.svg" />
+    <Content Include="Content\kendo\2020.1.114\fonts\glyphs\WebComponentsIcons.svg" />
+    <Content Include="Content\kendo\2020.1.114\HighContrast\editor.png" />
+    <Content Include="Content\kendo\2020.1.114\HighContrast\imagebrowser.png" />
+    <Content Include="Content\kendo\2020.1.114\HighContrast\indeterminate.gif" />
+    <Content Include="Content\kendo\2020.1.114\HighContrast\loading-image.gif" />
+    <Content Include="Content\kendo\2020.1.114\HighContrast\loading.gif" />
+    <Content Include="Content\kendo\2020.1.114\HighContrast\loading_2x.gif" />
+    <Content Include="Content\kendo\2020.1.114\HighContrast\markers.png" />
+    <Content Include="Content\kendo\2020.1.114\HighContrast\markers_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\HighContrast\slider-h.gif" />
+    <Content Include="Content\kendo\2020.1.114\HighContrast\slider-v.gif" />
+    <Content Include="Content\kendo\2020.1.114\HighContrast\sprite.png" />
+    <Content Include="Content\kendo\2020.1.114\HighContrast\sprite_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\HighContrast\sprite_kpi.png" />
+    <Content Include="Content\kendo\2020.1.114\HighContrast\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\images\back.png" />
+    <Content Include="Content\kendo\2020.1.114\images\kendoui.svg" />
+    <Content Include="Content\kendo\2020.1.114\images\wp8_icons.png" />
+    <Content Include="Content\kendo\2020.1.114\images\wp8_inverseicons.png" />
+    <Content Include="Content\kendo\2020.1.114\kendo.black.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.black.mobile.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.blueopal.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.blueopal.mobile.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.bootstrap-v4.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.bootstrap.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.bootstrap.mobile.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.common-bootstrap.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.common-fiori.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.common-material.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.common-nova.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.common-office365.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.common.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.black.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.blueopal.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.bootstrap.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.default.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.fiori.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.flat.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.highcontrast.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.material.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.materialblack.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.metro.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.metroblack.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.mobile.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.moonlight.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.nova.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.office365.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.silver.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.uniform.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.default-v2.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.default.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.default.mobile.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.fiori.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.fiori.mobile.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.flat.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.flat.mobile.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.highcontrast.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.highcontrast.mobile.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.material-v2.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.material.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.material.mobile.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.materialblack.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.materialblack.mobile.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.metro.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.metro.mobile.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.metroblack.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.metroblack.mobile.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.all.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.android.dark.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.android.light.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.blackberry.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.common.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.fiori.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.flat.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.ios.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.material.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.meego.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.nova.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.office365.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.wp8.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.moonlight.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.moonlight.mobile.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.nova.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.nova.mobile.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.office365.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.office365.mobile.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.rtl.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.silver.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.silver.mobile.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.uniform.min.css" />
+    <Content Include="Content\kendo\2020.1.114\kendo.uniform.mobile.min.css" />
+    <Content Include="Content\kendo\2020.1.114\MaterialBlack\editor.png" />
+    <Content Include="Content\kendo\2020.1.114\MaterialBlack\imagebrowser.png" />
+    <Content Include="Content\kendo\2020.1.114\MaterialBlack\indeterminate.gif" />
+    <Content Include="Content\kendo\2020.1.114\MaterialBlack\loading-image.gif" />
+    <Content Include="Content\kendo\2020.1.114\MaterialBlack\loading.gif" />
+    <Content Include="Content\kendo\2020.1.114\MaterialBlack\loading_2x.gif" />
+    <Content Include="Content\kendo\2020.1.114\MaterialBlack\markers.png" />
+    <Content Include="Content\kendo\2020.1.114\MaterialBlack\markers_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\MaterialBlack\slider-h.gif" />
+    <Content Include="Content\kendo\2020.1.114\MaterialBlack\slider-v.gif" />
+    <Content Include="Content\kendo\2020.1.114\MaterialBlack\sprite.png" />
+    <Content Include="Content\kendo\2020.1.114\MaterialBlack\sprite_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\MaterialBlack\sprite_kpi.png" />
+    <Content Include="Content\kendo\2020.1.114\MaterialBlack\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Material\editor.png" />
+    <Content Include="Content\kendo\2020.1.114\Material\imagebrowser.png" />
+    <Content Include="Content\kendo\2020.1.114\Material\indeterminate.gif" />
+    <Content Include="Content\kendo\2020.1.114\Material\loading-image.gif" />
+    <Content Include="Content\kendo\2020.1.114\Material\loading.gif" />
+    <Content Include="Content\kendo\2020.1.114\Material\loading_2x.gif" />
+    <Content Include="Content\kendo\2020.1.114\Material\markers.png" />
+    <Content Include="Content\kendo\2020.1.114\Material\markers_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Material\slider-h.gif" />
+    <Content Include="Content\kendo\2020.1.114\Material\slider-v.gif" />
+    <Content Include="Content\kendo\2020.1.114\Material\sprite.png" />
+    <Content Include="Content\kendo\2020.1.114\Material\sprite_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Material\sprite_kpi.png" />
+    <Content Include="Content\kendo\2020.1.114\Material\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\MetroBlack\editor.png" />
+    <Content Include="Content\kendo\2020.1.114\MetroBlack\imagebrowser.png" />
+    <Content Include="Content\kendo\2020.1.114\MetroBlack\indeterminate.gif" />
+    <Content Include="Content\kendo\2020.1.114\MetroBlack\loading-image.gif" />
+    <Content Include="Content\kendo\2020.1.114\MetroBlack\loading.gif" />
+    <Content Include="Content\kendo\2020.1.114\MetroBlack\loading_2x.gif" />
+    <Content Include="Content\kendo\2020.1.114\MetroBlack\markers.png" />
+    <Content Include="Content\kendo\2020.1.114\MetroBlack\markers_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\MetroBlack\slider-h.gif" />
+    <Content Include="Content\kendo\2020.1.114\MetroBlack\slider-v.gif" />
+    <Content Include="Content\kendo\2020.1.114\MetroBlack\sprite.png" />
+    <Content Include="Content\kendo\2020.1.114\MetroBlack\sprite_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\MetroBlack\sprite_kpi.png" />
+    <Content Include="Content\kendo\2020.1.114\MetroBlack\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Metro\editor.png" />
+    <Content Include="Content\kendo\2020.1.114\Metro\imagebrowser.png" />
+    <Content Include="Content\kendo\2020.1.114\Metro\indeterminate.gif" />
+    <Content Include="Content\kendo\2020.1.114\Metro\loading-image.gif" />
+    <Content Include="Content\kendo\2020.1.114\Metro\loading.gif" />
+    <Content Include="Content\kendo\2020.1.114\Metro\loading_2x.gif" />
+    <Content Include="Content\kendo\2020.1.114\Metro\markers.png" />
+    <Content Include="Content\kendo\2020.1.114\Metro\markers_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Metro\slider-h.gif" />
+    <Content Include="Content\kendo\2020.1.114\Metro\slider-v.gif" />
+    <Content Include="Content\kendo\2020.1.114\Metro\sprite.png" />
+    <Content Include="Content\kendo\2020.1.114\Metro\sprite_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Metro\sprite_kpi.png" />
+    <Content Include="Content\kendo\2020.1.114\Metro\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Moonlight\editor.png" />
+    <Content Include="Content\kendo\2020.1.114\Moonlight\imagebrowser.png" />
+    <Content Include="Content\kendo\2020.1.114\Moonlight\indeterminate.gif" />
+    <Content Include="Content\kendo\2020.1.114\Moonlight\loading-image.gif" />
+    <Content Include="Content\kendo\2020.1.114\Moonlight\loading.gif" />
+    <Content Include="Content\kendo\2020.1.114\Moonlight\loading_2x.gif" />
+    <Content Include="Content\kendo\2020.1.114\Moonlight\markers.png" />
+    <Content Include="Content\kendo\2020.1.114\Moonlight\markers_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Moonlight\slider-h.gif" />
+    <Content Include="Content\kendo\2020.1.114\Moonlight\slider-v.gif" />
+    <Content Include="Content\kendo\2020.1.114\Moonlight\sprite.png" />
+    <Content Include="Content\kendo\2020.1.114\Moonlight\sprite_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Moonlight\sprite_kpi.png" />
+    <Content Include="Content\kendo\2020.1.114\Moonlight\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Nova\editor.png" />
+    <Content Include="Content\kendo\2020.1.114\Nova\imagebrowser.png" />
+    <Content Include="Content\kendo\2020.1.114\Nova\indeterminate.gif" />
+    <Content Include="Content\kendo\2020.1.114\Nova\loading-image.gif" />
+    <Content Include="Content\kendo\2020.1.114\Nova\loading.gif" />
+    <Content Include="Content\kendo\2020.1.114\Nova\loading_2x.gif" />
+    <Content Include="Content\kendo\2020.1.114\Nova\markers.png" />
+    <Content Include="Content\kendo\2020.1.114\Nova\markers_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Nova\slider-h.gif" />
+    <Content Include="Content\kendo\2020.1.114\Nova\slider-v.gif" />
+    <Content Include="Content\kendo\2020.1.114\Nova\sprite.png" />
+    <Content Include="Content\kendo\2020.1.114\Nova\sprite_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Nova\sprite_kpi.png" />
+    <Content Include="Content\kendo\2020.1.114\Nova\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Office365\editor.png" />
+    <Content Include="Content\kendo\2020.1.114\Office365\imagebrowser.png" />
+    <Content Include="Content\kendo\2020.1.114\Office365\indeterminate.gif" />
+    <Content Include="Content\kendo\2020.1.114\Office365\loading-image.gif" />
+    <Content Include="Content\kendo\2020.1.114\Office365\loading.gif" />
+    <Content Include="Content\kendo\2020.1.114\Office365\loading_2x.gif" />
+    <Content Include="Content\kendo\2020.1.114\Office365\markers.png" />
+    <Content Include="Content\kendo\2020.1.114\Office365\markers_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Office365\slider-h.gif" />
+    <Content Include="Content\kendo\2020.1.114\Office365\slider-v.gif" />
+    <Content Include="Content\kendo\2020.1.114\Office365\sprite.png" />
+    <Content Include="Content\kendo\2020.1.114\Office365\sprite_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Office365\sprite_kpi.png" />
+    <Content Include="Content\kendo\2020.1.114\Office365\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Silver\editor.png" />
+    <Content Include="Content\kendo\2020.1.114\Silver\imagebrowser.png" />
+    <Content Include="Content\kendo\2020.1.114\Silver\indeterminate.gif" />
+    <Content Include="Content\kendo\2020.1.114\Silver\loading-image.gif" />
+    <Content Include="Content\kendo\2020.1.114\Silver\loading.gif" />
+    <Content Include="Content\kendo\2020.1.114\Silver\loading_2x.gif" />
+    <Content Include="Content\kendo\2020.1.114\Silver\markers.png" />
+    <Content Include="Content\kendo\2020.1.114\Silver\markers_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Silver\slider-h.gif" />
+    <Content Include="Content\kendo\2020.1.114\Silver\slider-v.gif" />
+    <Content Include="Content\kendo\2020.1.114\Silver\sprite.png" />
+    <Content Include="Content\kendo\2020.1.114\Silver\sprite_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Silver\sprite_kpi.png" />
+    <Content Include="Content\kendo\2020.1.114\Silver\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\brushed-metal.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\dots1.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\dots10.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\dots11.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\dots12.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\dots13.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\dots2.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\dots3.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\dots4.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\dots5.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\dots6.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\dots7.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\dots8.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\dots9.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\glass-lighter.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\glass.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\highlight.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\hsv-gradient.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\hue.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\image-default.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\leather1.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\leather2.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\noise.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\stripe1.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\stripe2.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\stripe3.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\stripe4.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\stripe5.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\stripe6.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\transparency-reversed.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\transparency.png" />
+    <Content Include="Content\kendo\2020.1.114\textures\transtexture.png" />
+    <Content Include="Content\kendo\2020.1.114\Uniform\editor.png" />
+    <Content Include="Content\kendo\2020.1.114\Uniform\imagebrowser.png" />
+    <Content Include="Content\kendo\2020.1.114\Uniform\indeterminate.gif" />
+    <Content Include="Content\kendo\2020.1.114\Uniform\loading-image.gif" />
+    <Content Include="Content\kendo\2020.1.114\Uniform\loading.gif" />
+    <Content Include="Content\kendo\2020.1.114\Uniform\loading_2x.gif" />
+    <Content Include="Content\kendo\2020.1.114\Uniform\markers.png" />
+    <Content Include="Content\kendo\2020.1.114\Uniform\markers_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Uniform\slider-h.gif" />
+    <Content Include="Content\kendo\2020.1.114\Uniform\slider-v.gif" />
+    <Content Include="Content\kendo\2020.1.114\Uniform\sprite.png" />
+    <Content Include="Content\kendo\2020.1.114\Uniform\sprite_2x.png" />
+    <Content Include="Content\kendo\2020.1.114\Uniform\sprite_kpi.png" />
+    <Content Include="Content\kendo\2020.1.114\Uniform\sprite_kpi_2x.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\fonts\icomoon.eot" />
+    <Content Include="Content\fonts\icomoon.ttf" />
+    <Content Include="Content\fonts\icomoon.woff" />
+    <Content Include="Content\kendo\2020.1.114\kendo.black.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.black.mobile.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.blueopal.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.blueopal.mobile.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.bootstrap-v4.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.bootstrap.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.bootstrap.mobile.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.common-bootstrap.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.common-fiori.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.common-material.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.common-nova.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.common-office365.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.common.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.black.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.blueopal.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.bootstrap.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.default.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.fiori.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.flat.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.highcontrast.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.material.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.materialblack.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.metro.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.metroblack.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.mobile.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.moonlight.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.nova.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.office365.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.silver.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.dataviz.uniform.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.default-v2.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.default.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.default.mobile.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.fiori.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.fiori.mobile.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.flat.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.flat.mobile.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.highcontrast.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.highcontrast.mobile.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.material-v2.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.material.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.material.mobile.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.materialblack.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.materialblack.mobile.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.metro.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.metro.mobile.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.metroblack.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.metroblack.mobile.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.all.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.android.dark.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.android.light.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.blackberry.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.common.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.fiori.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.flat.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.ios.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.material.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.meego.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.nova.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.office365.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.mobile.wp8.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.moonlight.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.moonlight.mobile.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.nova.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.nova.mobile.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.office365.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.office365.mobile.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.rtl.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.silver.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.silver.mobile.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.uniform.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\kendo.uniform.mobile.min.css.map" />
+    <Content Include="Content\kendo\2020.1.114\fonts\DejaVu\DejaVuSans-Bold.ttf" />
+    <Content Include="Content\kendo\2020.1.114\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
+    <Content Include="Content\kendo\2020.1.114\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
+    <Content Include="Content\kendo\2020.1.114\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
+    <Content Include="Content\kendo\2020.1.114\fonts\DejaVu\DejaVuSans.ttf" />
+    <Content Include="Content\kendo\2020.1.114\fonts\DejaVu\DejaVuSansMono-Bold.ttf" />
+    <Content Include="Content\kendo\2020.1.114\fonts\DejaVu\DejaVuSansMono-BoldOblique.ttf" />
+    <Content Include="Content\kendo\2020.1.114\fonts\DejaVu\DejaVuSansMono-Oblique.ttf" />
+    <Content Include="Content\kendo\2020.1.114\fonts\DejaVu\DejaVuSansMono.ttf" />
+    <Content Include="Content\kendo\2020.1.114\fonts\DejaVu\DejaVuSerif-Bold.ttf" />
+    <Content Include="Content\kendo\2020.1.114\fonts\DejaVu\DejaVuSerif-BoldItalic.ttf" />
+    <Content Include="Content\kendo\2020.1.114\fonts\DejaVu\DejaVuSerif-Italic.ttf" />
+    <Content Include="Content\kendo\2020.1.114\fonts\DejaVu\DejaVuSerif.ttf" />
+    <Content Include="Content\kendo\2020.1.114\fonts\glyphs\KendoUIGlyphs.eot" />
+    <Content Include="Content\kendo\2020.1.114\fonts\glyphs\KendoUIGlyphs.ttf" />
+    <Content Include="Content\kendo\2020.1.114\fonts\glyphs\KendoUIGlyphs.woff" />
+    <Content Include="Content\kendo\2020.1.114\fonts\glyphs\WebComponentsIcons.eot" />
+    <Content Include="Content\kendo\2020.1.114\fonts\glyphs\WebComponentsIcons.ttf" />
+    <Content Include="Content\kendo\2020.1.114\fonts\glyphs\WebComponentsIcons.woff" />
+    <Content Include="Content\kendo\2020.1.114\images\kendoui.ttf" />
+    <Content Include="Content\kendo\2020.1.114\images\kendoui.woff" />
+    <Content Include="libman.json" />
+    <Content Include="lib\signalr\LICENSE.md" />
+    <Content Include="lib\signalr\package.json" />
+    <Content Include="lib\signalr\README.md" />
+    <Content Include="lib\howler.js\examples\3d\README.md" />
+    <Content Include="lib\howler.js\examples\player\README.md" />
+    <Content Include="lib\howler.js\examples\radio\README.md" />
+    <Content Include="lib\howler.js\examples\README.md" />
+    <Content Include="lib\howler.js\examples\sprite\README.md" />
+    <Content Include="lib\SoundJS\docs\soundjs_docs-NEXT.zip" />
+    <Content Include="lib\SoundJS\docs\SoundJS_docs.zip" />
+    <Content Include="lib\SoundJS\lib\README.md" />
+    <Content Include="lib\jPlayer-2.9.2\.jamignore" />
+    <Content Include="lib\jPlayer-2.9.2\artwork\jplayer.blue.monday.psd" />
+    <Content Include="lib\jPlayer-2.9.2\artwork\jplayer.blue.monday.spirites.psd" />
+    <Content Include="lib\jPlayer-2.9.2\artwork\jplayer.circle.player.psd" />
+    <Content Include="lib\jPlayer-2.9.2\artwork\jplayer.pink.flag.psd" />
+    <Content Include="lib\jPlayer-2.9.2\artwork\jplayer.pink.flag.sprites.psd" />
+    <Content Include="lib\jPlayer-2.9.2\bower.json" />
+    <Content Include="lib\jPlayer-2.9.2\CHANGELOG.md" />
+    <Content Include="lib\jPlayer-2.9.2\CLA.md" />
+    <Content Include="lib\jPlayer-2.9.2\composer.json" />
+    <Content Include="lib\jPlayer-2.9.2\CONTRIBUTING.md" />
+    <Content Include="lib\jPlayer-2.9.2\lib\README.md" />
+    <Content Include="lib\jPlayer-2.9.2\MIGRATION.md" />
+    <Content Include="lib\jPlayer-2.9.2\package.json" />
+    <Content Include="lib\jPlayer-2.9.2\README.md" />
+    <Content Include="lib\jPlayer-2.9.2\src\actionscript\happyworm\jPlayer\ConnectManager.as" />
+    <Content Include="lib\jPlayer-2.9.2\src\actionscript\happyworm\jPlayer\JplayerEvent.as" />
+    <Content Include="lib\jPlayer-2.9.2\src\actionscript\happyworm\jPlayer\JplayerMp3.as" />
+    <Content Include="lib\jPlayer-2.9.2\src\actionscript\happyworm\jPlayer\JplayerMp4.as" />
+    <Content Include="lib\jPlayer-2.9.2\src\actionscript\happyworm\jPlayer\JplayerRtmp.as" />
+    <Content Include="lib\jPlayer-2.9.2\src\actionscript\happyworm\jPlayer\JplayerStatus.as" />
+    <Content Include="lib\jPlayer-2.9.2\src\actionscript\Jplayer.as" />
+    <Content Include="lib\jPlayer-2.9.2\src\javascript\add-on\.jshintrc" />
+    <Content Include="lib\jPlayer-2.9.2\src\javascript\jplayer\.jshintrc" />
+    <Content Include="lib\jPlayer-2.9.2\src\javascript\popcorn\.jshintrc" />
+    <Content Include="lib\jPlayer-2.9.2\src\skin\blue.monday\scss\jplayer.blue.monday.scss" />
+    <Content Include="lib\jPlayer-2.9.2\src\skin\pink.flag\scss\jplayer.pink.flag.scss" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="lib\aspnet-signalr\signalr.js" />
+    <Content Include="lib\aspnet-signalr\signalr.min.js" />
+    <Content Include="lib\microsoft-signalr\signalr.js" />
+    <Content Include="lib\microsoft-signalr\signalr.min.js" />
+    <Content Include="lib\signalr\jquery.signalR.js" />
+    <Content Include="lib\signalr\jquery.signalR.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.1.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.1.min.js" />
+    <Content Include="Scripts\kendo.modernizr.custom.js" />
+    <Content Include="Scripts\kendo\2020.1.114\angular.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\jquery.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\jszip.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <None Include="Scripts\kendo\2020.1.114\kendo.all-vsdoc.js" />
+    <None Include="Scripts\kendo\2020.1.114\kendo.all.min.intellisense.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.all.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.angular.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.autocomplete.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.badge.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.binder.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.breadcrumb.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.button.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.buttongroup.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.calendar.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.chat.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.color.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.colorpicker.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.columnmenu.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.columnsorter.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.combobox.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.core.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.data.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.data.odata.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.data.signalr.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.data.xml.min.js" />
+    <None Include="Scripts\kendo\2020.1.114\kendo.dataviz-vsdoc.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.barcode.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.chart.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.core.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.diagram.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.gauge.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.map.min.js" />
+    <None Include="Scripts\kendo\2020.1.114\kendo.dataviz.min.intellisense.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.mobile.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.qrcode.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.sparkline.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.stock.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.themes.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.treemap.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dateinput.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.datepicker.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.daterangepicker.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.datetimepicker.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dialog.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dom.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.draganddrop.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.drawer.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.drawing.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dropdownlist.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dropdowntree.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.editable.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.editor.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.excel.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.filebrowser.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.filemanager.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.filter.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.filtercell.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.filtermenu.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.fx.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.gantt.list.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.gantt.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.gantt.timeline.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.grid.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.groupable.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.imagebrowser.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.list.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.listbox.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.listview.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.maskedtextbox.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mediaplayer.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.menu.min.js" />
+    <None Include="Scripts\kendo\2020.1.114\kendo.mobile-vsdoc.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.actionsheet.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.application.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.button.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.buttongroup.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.collapsible.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.drawer.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.listview.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.loader.min.js" />
+    <None Include="Scripts\kendo\2020.1.114\kendo.mobile.min.intellisense.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.modalview.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.navbar.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.pane.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.popover.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.scroller.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.scrollview.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.shim.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.splitview.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.switch.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.tabstrip.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.view.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.multicolumncombobox.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.multiselect.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.multiviewcalendar.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.notification.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.numerictextbox.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.ooxml.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.pager.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.pane.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.panelbar.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.pdf.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.pdfviewer.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.pivot.configurator.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.pivot.fieldmenu.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.pivotgrid.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.popup.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.progressbar.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.rating.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.reorderable.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.resizable.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.responsivepanel.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.ripple.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.router.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.scheduler.agendaview.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.scheduler.dayview.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.scheduler.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.scheduler.monthview.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.scheduler.recurrence.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.scheduler.timelineview.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.scheduler.view.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.scrollview.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.selectable.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.slider.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.sortable.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.splitter.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.spreadsheet.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.switch.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.tabstrip.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.timeline.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.timepicker.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.timezones.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.toolbar.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.tooltip.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.touch.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.treelist.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.treeview.draganddrop.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.treeview.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.upload.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.userevents.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.validator.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.view.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.virtuallist.min.js" />
+    <None Include="Scripts\kendo\2020.1.114\kendo.web-vsdoc.js" />
+    <None Include="Scripts\kendo\2020.1.114\kendo.web.min.intellisense.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.web.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.window.min.js" />
+    <Content Include="Scripts\kendo\2020.1.114\pako_deflate.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Sound\FreeQ\0.wav" />
+    <Content Include="Sound\FreeQ\1.wav" />
+    <Content Include="Sound\FreeQ\10.wav" />
+    <Content Include="Sound\FreeQ\100.wav" />
+    <Content Include="Sound\FreeQ\2.wav" />
+    <Content Include="Sound\FreeQ\20.wav" />
+    <Content Include="Sound\FreeQ\3.wav" />
+    <Content Include="Sound\FreeQ\4.wav" />
+    <Content Include="Sound\FreeQ\5.wav" />
+    <Content Include="Sound\FreeQ\6.wav" />
+    <Content Include="Sound\FreeQ\7.wav" />
+    <Content Include="Sound\FreeQ\8.wav" />
+    <Content Include="Sound\FreeQ\9.wav" />
+    <Content Include="Sound\FreeQ\chanel.wav" />
+    <Content Include="Sound\FreeQ\ed.wav" />
+    <Content Include="Sound\FreeQ\ka.wav" />
+    <Content Include="Sound\FreeQ\number.wav" />
+    <Content Include="Sound\FreeQ\please.wav" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Scripts\kendo\2020.1.114\jquery.min.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.all.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.angular.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.autocomplete.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.badge.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.binder.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.breadcrumb.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.button.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.buttongroup.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.calendar.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.chat.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.color.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.colorpicker.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.columnmenu.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.columnsorter.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.combobox.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.core.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.data.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.data.odata.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.data.signalr.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.data.xml.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.barcode.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.chart.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.core.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.diagram.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.gauge.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.map.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.mobile.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.qrcode.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.sparkline.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.stock.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.themes.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dataviz.treemap.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dateinput.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.datepicker.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.daterangepicker.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.datetimepicker.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dialog.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dom.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.draganddrop.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.drawer.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.drawing.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dropdownlist.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.dropdowntree.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.editable.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.editor.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.excel.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.filebrowser.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.filemanager.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.filter.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.filtercell.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.filtermenu.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.fx.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.gantt.list.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.gantt.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.gantt.timeline.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.grid.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.groupable.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.imagebrowser.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.list.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.listbox.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.listview.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.maskedtextbox.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mediaplayer.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.menu.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.actionsheet.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.application.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.button.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.buttongroup.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.collapsible.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.drawer.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.listview.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.loader.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.modalview.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.navbar.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.pane.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.popover.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.scroller.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.scrollview.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.shim.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.splitview.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.switch.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.tabstrip.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.mobile.view.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.multicolumncombobox.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.multiselect.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.multiviewcalendar.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.notification.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.numerictextbox.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.ooxml.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.pager.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.pane.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.panelbar.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.pdf.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.pdfviewer.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.pivot.configurator.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.pivot.fieldmenu.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.pivotgrid.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.popup.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.progressbar.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.rating.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.reorderable.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.resizable.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.responsivepanel.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.ripple.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.router.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.scheduler.agendaview.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.scheduler.dayview.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.scheduler.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.scheduler.monthview.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.scheduler.recurrence.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.scheduler.timelineview.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.scheduler.view.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.scrollview.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.selectable.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.slider.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.sortable.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.splitter.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.spreadsheet.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.switch.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.tabstrip.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.timeline.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.timepicker.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.timezones.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.toolbar.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.tooltip.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.touch.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.treelist.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.treeview.draganddrop.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.treeview.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.upload.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.userevents.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.validator.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.view.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.virtuallist.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.web.min.js.map" />
+    <Content Include="Scripts\kendo\2020.1.114\kendo.window.min.js.map" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Site.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Sound\temp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Infrastucture\DITS.HILI.WMS.Core\DITS.HILI.WMS.Core.csproj">
+      <Project>{880da467-3a4c-4fd5-b848-2224594c8eec}</Project>
+      <Name>DITS.HILI.WMS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Infrastucture\DITS.HILI.WMS.Master\DITS.HILI.WMS.MasterModel.csproj">
+      <Project>{6119CB96-198D-40F4-B5A8-CF0466181697}</Project>
+      <Name>DITS.HILI.WMS.MasterModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Services\TruckQueue\DITS.HILI.WMS.TruckQueueModel\DITS.HILI.WMS.TruckQueueModel.csproj">
+      <Project>{0107440f-31b1-40c8-a20f-beeda82723ea}</Project>
+      <Name>DITS.HILI.WMS.TruckQueueModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DITS.HILI.HttpClientService\DITS.HILI.HttpClientService.csproj">
+      <Project>{56924826-ff3a-4240-8741-4b17cd822b4c}</Project>
+      <Name>DITS.HILI.HttpClientService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DITS.HILI.WMS.WebClientService\DITS.HILI.WMS.ClientService.csproj">
+      <Project>{f5ee2edd-91cf-4e29-afe4-2c1dd2865b80}</Project>
+      <Name>DITS.HILI.WMS.ClientService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53122</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49573/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:49573/</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\..\..\packages\NAudio.Lame.1.1.6\build\NAudio.Lame.targets" Condition="Exists('..\..\..\packages\NAudio.Lame.1.1.6\build\NAudio.Lame.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\packages\NAudio.Lame.1.1.6\build\NAudio.Lame.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\NAudio.Lame.1.1.6\build\NAudio.Lame.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

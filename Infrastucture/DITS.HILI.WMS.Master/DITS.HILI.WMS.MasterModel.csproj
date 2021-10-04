@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6119CB96-198D-40F4-B5A8-CF0466181697}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DITS.HILI.WMS.MasterModel</RootNamespace>
+    <AssemblyName>DITS.HILI.WMS.MasterModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\DITS.HILI.WMS.MasterModel.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>DITS.HILI.WMS.MasterModel.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>DITS.HILI.WMS.MasterModel.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.2.11.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Buffers.4.4.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Diagnostics.DiagnosticSource.4.6.0\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Memory.4.5.3\lib\netstandard1.1\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseAssignJob.cs" />
+    <Compile Include="BaseAddress.cs" />
+    <Compile Include="BaseEntity.cs" />
+    <Compile Include="BasePrefix.cs" />
+    <Compile Include="BaseProductProfile.cs" />
+    <Compile Include="Companies\Branch.cs" />
+    <Compile Include="Companies\BranchType.cs" />
+    <Compile Include="Companies\Company.cs" />
+    <Compile Include="Companies\CompanyAddess.cs" />
+    <Compile Include="Companies\Employee.cs" />
+    <Compile Include="Companies\SiteModel.cs" />
+    <Compile Include="Companies\Site.cs" />
+    <Compile Include="Contacts\ContactTypeModel.cs" />
+    <Compile Include="Contacts\ContactModel.cs" />
+    <Compile Include="Contacts\SubDistrict.cs" />
+    <Compile Include="Contacts\District.cs" />
+    <Compile Include="Contacts\Province.cs" />
+    <Compile Include="Contacts\Contact.cs" />
+    <Compile Include="Contacts\ContactAddress.cs" />
+    <Compile Include="Contacts\ContactInType.cs" />
+    <Compile Include="Contacts\ContactTypeEnum.cs" />
+    <Compile Include="Contacts\CustomerOfProductOwner.cs" />
+    <Compile Include="Contacts\ProductOwner.cs" />
+    <Compile Include="Contacts\ProductOwnerAddress.cs" />
+    <Compile Include="Contacts\SupplierOfProductOwner.cs" />
+    <Compile Include="Core\CustomMessage.cs" />
+    <Compile Include="Core\CustomResource.cs" />
+    <Compile Include="Core\Language.cs" />
+    <Compile Include="Core\Reference.cs" />
+    <Compile Include="Core\Token.cs" />
+    <Compile Include="CustomEnumerable.cs" />
+    <Compile Include="CustomModel\ConditionConfigModel.cs" />
+    <Compile Include="CustomModel\DocumentTypeCustomModel.cs" />
+    <Compile Include="CustomModel\LogicalZoneConfigModel.cs" />
+    <Compile Include="CustomModel\LogicalZoneDetailModel.cs" />
+    <Compile Include="CustomModel\LogicalZoneGroupDetailModel.cs" />
+    <Compile Include="CustomModel\LogicalZoneGroupModel.cs" />
+    <Compile Include="CustomModel\LogicalZoneModel.cs" />
+    <Compile Include="CustomModel\ShipToModel.cs" />
+    <Compile Include="CustomModel\ProductSelectModel.cs" />
+    <Compile Include="CustomModel\PrinterModel.cs" />
+    <Compile Include="CustomModel\DataFilterModel.cs" />
+    <Compile Include="CustomModel\ProductTemplateUomModel.cs" />
+    <Compile Include="CustomModel\StockInOutModel.cs" />
+    <Compile Include="DataTransfer.cs" />
+    <Compile Include="Interface\itf_interface_error_log.cs" />
+    <Compile Include="Interface\itf_temp_change_lot_status.cs" />
+    <Compile Include="Interface\itf_temp_in_receive_with_CN.cs" />
+    <Compile Include="Interface\itf_temp_change_lot.cs" />
+    <Compile Include="Interface\itf_temp_ReduceStock_adjust.cs" />
+    <Compile Include="Interface\itf_temp_customer.cs" />
+    <Compile Include="Interface\itf_temp_in_dispatch_log.cs" />
+    <Compile Include="Interface\itf_temp_in_dispatch.cs" />
+    <Compile Include="Interface\itf_temp_AddStock_adjust.cs" />
+    <Compile Include="Interface\itf_temp_in_receive.cs" />
+    <Compile Include="Interface\itf_temp_product.cs" />
+    <Compile Include="Interface\itf_temp_product_unit.cs" />
+    <Compile Include="Interface\itf_temp_reclassified.cs" />
+    <Compile Include="Interface\T_BalanceBF.cs" />
+    <Compile Include="Interface\T_StockCard.cs" />
+    <Compile Include="Products\ProductModel.cs" />
+    <Compile Include="Products\Product.cs" />
+    <Compile Include="Products\ProductBrand.cs" />
+    <Compile Include="Products\ProductCode.cs" />
+    <Compile Include="Products\ProductOfProductOwner.cs" />
+    <Compile Include="Products\ProductEnum.cs" />
+    <Compile Include="Products\ProductColor.cs" />
+    <Compile Include="Products\ProductGroupLevel3.cs" />
+    <Compile Include="Products\ProductGroupLevel2.cs" />
+    <Compile Include="Products\ProductGroupLevel1.cs" />
+    <Compile Include="Products\ProductReplacement.cs" />
+    <Compile Include="Products\ProductSafetyStock.cs" />
+    <Compile Include="Products\ProductShape.cs" />
+    <Compile Include="Products\ProductTemplateUom.cs" />
+    <Compile Include="Products\ProductTemplateUomDetail.cs" />
+    <Compile Include="Rule\SpecialBookingRule.cs" />
+    <Compile Include="Rule\SpecialPutawayRule.cs" />
+    <Compile Include="Secure\Application.cs" />
+    <Compile Include="Secure\MonthEnd.cs" />
+    <Compile Include="Secure\Permission.cs" />
+    <Compile Include="Secure\PermissionEnum.cs" />
+    <Compile Include="Secure\PermissionInRole.cs" />
+    <Compile Include="Secure\ProgramEnum.cs" />
+    <Compile Include="Secure\ProgramInGroup.cs" />
+    <Compile Include="Secure\ProgramTypeEnum.cs" />
+    <Compile Include="Secure\ProgramValue.cs" />
+    <Compile Include="Secure\RoleInWarehouse.cs" />
+    <Compile Include="Secure\RolesPermission.cs" />
+    <Compile Include="Secure\UserGroups.cs" />
+    <Compile Include="Secure\UserInGroup.cs" />
+    <Compile Include="Secure\UserInRole.cs" />
+    <Compile Include="Stock\StockBalance.cs" />
+    <Compile Include="Stock\StockInfo.cs" />
+    <Compile Include="Stock\StockLocationBalance.cs" />
+    <Compile Include="Stock\StockReserveEnum.cs" />
+    <Compile Include="Stock\StockTransaction.cs" />
+    <Compile Include="Stock\StockTransactionType.cs" />
+    <Compile Include="Utility\DocumentType.cs" />
+    <Compile Include="Utility\DocumentTypeEnum.cs" />
+    <Compile Include="Utility\ItfInterfaceMapping.cs" />
+    <Compile Include="Utility\ItfInterfaceMappingDocument.cs" />
+    <Compile Include="Utility\ItfTransactionType.cs" />
+    <Compile Include="Utility\LogLevelEnum.cs" />
+    <Compile Include="Utility\ISONumber.cs" />
+    <Compile Include="Utility\Printer.cs" />
+    <Compile Include="Utility\ProductStatus.cs" />
+    <Compile Include="Products\ProductUnit.cs" />
+    <Compile Include="Products\Units.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Secure\Program.cs" />
+    <Compile Include="Secure\Roles.cs" />
+    <Compile Include="Secure\UserAccounts.cs" />
+    <Compile Include="CustomModel\ProgramAuthorize.cs" />
+    <Compile Include="Utility\PalletType.cs" />
+    <Compile Include="Utility\ProductStatusMap.cs" />
+    <Compile Include="Utility\ProductStatusMapDocument.cs" />
+    <Compile Include="Utility\ProductSubStatus.cs" />
+    <Compile Include="Utility\Reason.cs" />
+    <Compile Include="Warehouses\ShippingTo.cs" />
+    <Compile Include="Warehouses\TruckNoModel.cs" />
+    <Compile Include="Warehouses\DockConfigModel.cs" />
+    <Compile Include="Warehouses\ConditionConfig.cs" />
+    <Compile Include="Warehouses\EquipZoneConfigModel.cs" />
+    <Compile Include="Warehouses\LocationModel.cs" />
+    <Compile Include="Warehouses\DockConfig.cs" />
+    <Compile Include="Warehouses\EquipZoneConfig.cs" />
+    <Compile Include="Warehouses\LocationTypeEnum.cs" />
+    <Compile Include="Warehouses\Location.cs" />
+    <Compile Include="Warehouses\LogicalZoneConfig.cs" />
+    <Compile Include="Warehouses\LogicalZoneDetail.cs" />
+    <Compile Include="Warehouses\LogicalZoneGroupDetail.cs" />
+    <Compile Include="Warehouses\LogLocationHistory.cs" />
+    <Compile Include="Warehouses\LogicalZone.cs" />
+    <Compile Include="Warehouses\LogicalZoneGroup.cs" />
+    <Compile Include="Warehouses\LogicalZoneMapGroup.cs" />
+    <Compile Include="Warehouses\PhysicalZone.cs" />
+    <Compile Include="Warehouses\Truck.cs" />
+    <Compile Include="Warehouses\TruckType.cs" />
+    <Compile Include="Warehouses\ZoneModel.cs" />
+    <Compile Include="Warehouses\WarehouseModel.cs" />
+    <Compile Include="Warehouses\Warehouse.cs" />
+    <Compile Include="SystemKeyEnum.cs" />
+    <Compile Include="Warehouses\WarehouseType.cs" />
+    <Compile Include="Warehouses\Zone.cs" />
+    <Compile Include="Warehouses\ZoneConfig.cs" />
+    <Compile Include="Warehouses\ZoneType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="DITS.HILI.WMS.MasterModel.ruleset" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

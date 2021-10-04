@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="82.5dp"
+        android:id="@+id/linearLayout1">
+        <EditText
+            android:inputType="textMultiLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtQAFind" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout2"
+            android:gravity="right"
+            android:background="@android:color/holo_green_light">
+            <Button
+                android:text="Finish"
+                android:layout_width="77.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btnQAFinish" />
+            <Button
+                android:text="&lt;&lt;"
+                android:layout_width="45.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btnQABack" />
+            <Button
+                android:text="Find"
+                android:layout_width="138.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btnQAFind" />
+        </LinearLayout>
+    </LinearLayout>
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lvQAJoblist" />
+</LinearLayout>

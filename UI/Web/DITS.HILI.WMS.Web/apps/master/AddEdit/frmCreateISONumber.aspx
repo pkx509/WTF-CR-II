@@ -1,0 +1,129 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmCreateISONumber.aspx.cs" Inherits="DITS.HILI.WMS.Web.apps.master.frmCreateISONumber" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="~/Scripts/WmsOnline.css" rel="stylesheet" />
+    <style>
+        .search-item {
+            font: normal 11px tahoma, arial, helvetica, sans-serif;
+            padding: 3px 10px 3px 10px;
+            border: 1px solid #fff;
+            border-bottom: 1px solid #eeeeee;
+            white-space: normal;
+            color: #555;
+        }
+
+            .search-item h3 {
+                display: block;
+                font: inherit;
+                font-weight: bold;
+                color: #222;
+                margin: 0px;
+            }
+
+                .search-item h3 span {
+                    float: right;
+                    font-weight: normal;
+                    margin: 0 0 5px 5px;
+                    width: 100px;
+                    display: block;
+                    clear: none;
+                }
+
+        p {
+            width: 650px;
+        }
+
+        .ext-ie .x-form-text {
+            position: static !important;
+        }
+
+        div#ListCmbSiteName {
+            border-top-width: 1 !important;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <ext:ResourceManager ID="ResourceManager1" runat="server" />
+        <ext:Viewport runat="server" Layout="BorderLayout">
+            <Items>
+                <ext:FormPanel runat="server" ID="FormPanelDetail" Region="Center"
+                    BodyPadding="10" Flex="1" Layout="FitLayout">
+                    <FieldDefaults LabelAlign="Right" />
+                    <Items>
+                        <ext:Container runat="server" Layout="AnchorLayout" Flex="1" DefaultAnchor="100%">
+                            <Defaults>
+                                <ext:Parameter Name="HideEmptyLabel" Value="false" Mode="Raw" />
+                            </Defaults>
+                            <Items>
+                                <ext:Hidden ID="ISOId" runat="server" />
+
+                                <ext:TextField runat="server" ID="txtDocumentName" FieldLabel='<%$ Resource : DOCUMENT_NAME %>' TabIndex="3" LabelWidth="140" MaxLength="50" EnforceMaxLength="true" AllowBlank="false" AllowOnlyWhitespace="false" ReadOnly="true" AutoFocus="true" />
+                                <ext:TextField runat="server" ID="txtIso" FieldLabel="<%$ Resource : ISO_NUMBER %>" TabIndex="4" LabelWidth="140" MaxLength="50" EnforceMaxLength="true"  AllowBlank="false" AllowOnlyWhitespace="false" />
+                                <ext:DateField runat="server"
+                                    ID="EffectiveDate"
+                                    FieldLabel='<%$ Resource : EFFECTIVE_DATE %>'
+                                    LabelWidth="140"
+                                    MaxLength="10"
+                                    EnforceMaxLength="true"
+                                    Format="dd/MM/yyyy"
+                                    Flex="1"
+                                    LabelAlign="Right"  AllowBlank="false" AllowOnlyWhitespace="false"/>
+                                <ext:Container Layout="ColumnLayout" runat="server">
+                                    <Items>
+                                        <ext:Container Layout="AnchorLayout" runat="server" ColumnWidth="0.6" MarginSpec="0 0 5 0">
+                                            <Items>
+                                                <ext:Checkbox runat="server" ID="CheckReport" FieldLabel="<%$ Resource : REPORT %>" Name="IsReport" Checked="true" LabelWidth="140" ReadOnly="true" />
+                                                <ext:Checkbox runat="server" ID="txtIsActive" FieldLabel="<%$ Resource : ACTIVE %>" Name="IsActive" Checked="true" LabelWidth="140" ReadOnly="true"/>
+                                            </Items>
+                                        </ext:Container>
+
+                                        <ext:Checkbox runat="server" ID="CheckFrom" FieldLabel="<%$ Resource : FROM %>" Name="IsForm" Checked="true" LabelWidth="100" ReadOnly="true" />
+
+                                    </Items>
+                                </ext:Container>
+                            </Items>
+                        </ext:Container>
+                    </Items>
+
+                    <Listeners>
+                        <ValidityChange Handler="#{btnSave}.setDisabled(!valid); " />
+                    </Listeners>
+                    <BottomBar>
+                        <ext:Toolbar runat="server" ID="toolbarControls">
+                            <Items>
+                                <ext:ToolbarFill ID="TbarFill" runat="server" />
+                                <ext:Button ID="btnSave" runat="server"
+                                    Icon="Disk" Text="<%$ Resource : SAVE %>" Width="60" Disabled="true" TabIndex="15">
+                                    <DirectEvents>
+                                        <Click OnEvent="btnSave_Click"
+                                            Before="#{btnSave}.setDisabled(true);"
+                                            Complete="#{btnSave}.setDisabled(false);"
+                                            Buffer="350" />
+                                    </DirectEvents>
+                                </ext:Button>
+                                <ext:Button ID="btnClear" runat="server" Icon="PageWhite" Text="<%$ Resource : CLEAR %>" Width="60" TabIndex="16">
+                                    <Listeners>
+                                        <Click Handler="#{FormPanelDetail}.reset();" />
+                                    </Listeners>
+                                </ext:Button>
+                                <ext:Button ID="btnExit" runat="server" Icon="Cross" Text="<%$ Resource : EXIT %>" Width="60" TabIndex="16">
+                                    <DirectEvents>
+                                        <Click OnEvent="btnExit_Click" />
+                                    </DirectEvents>
+                                </ext:Button>
+                            </Items>
+                        </ext:Toolbar>
+                    </BottomBar>
+                </ext:FormPanel>
+            </Items>
+        </ext:Viewport>
+    </form>
+</body>
+</html>
+
+

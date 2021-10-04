@@ -1,0 +1,564 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{52921172-E9C9-4D18-997F-C21EA2EA3AC2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DITS.HILI.WMS.WebAPIs</RootNamespace>
+    <AssemblyName>DITS.HILI.WMS.WebAPIs</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>App_Data\DITS.HILI.WMS.WebAPIs.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>DITS.HILI.WMS.WebAPIs.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>DITS.HILI.WMS.WebAPIs.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac, Version=4.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.4.4.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.WebApi2.4.0.1\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.2.11.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.SignalR.Core.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.1\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.DotNet.PlatformAbstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.DotNet.PlatformAbstractions.1.1.1\lib\net451\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Buffers.4.4.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ComponentModel.Primitives.4.3.0\lib\net45\System.ComponentModel.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.TypeConverter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ComponentModel.TypeConverter.4.3.0\lib\net45\System.ComponentModel.TypeConverter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Diagnostics.DiagnosticSource.4.6.0\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Memory.4.5.3\lib\netstandard1.1\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Text.Encodings.Web.4.3.0\lib\netstandard1.0\System.Text.Encodings.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_GlobalResources\" />
+    <Folder Include="Areas\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\CustomAssemblyResolver.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\DependencyRegistration.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Configure.cs" />
+    <Compile Include="Controllers\HILIServiceController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="WMSAuthorizationServerProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\DITS.HILI.WMS.WebAPIs.XML" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="DITS.HILI.WMS.WebAPIs.ruleset" />
+    <None Include="Properties\PublishProfiles\HILIWMS4.2.pubxml" />
+    <Content Include="Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="PackagesAssemblies.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\DITS.HILI.Framework\DITS.HILI.Framework.csproj">
+      <Project>{29104f08-820f-495a-b677-b44637566916}</Project>
+      <Name>DITS.HILI.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\DITS.HILI.WMS.Message\DITS.HILI.WMS.Message.csproj">
+      <Project>{7273ae32-5a28-4ac7-8f54-7327c7fede4d}</Project>
+      <Name>DITS.HILI.WMS.Message</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\Dispatch\DITS.HILI.WMS.DispatchAPIs\DITS.HILI.WMS.DispatchAPIs.csproj">
+      <Project>{729f911e-15f1-4d62-a3da-d84ced3534f1}</Project>
+      <Name>DITS.HILI.WMS.DispatchAPIs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\Dispatch\DITS.HILI.WMS.DispatchConfiguration\DITS.HILI.WMS.DispatchConfiguration.csproj">
+      <Project>{a0ed081a-802f-4f32-85a1-87859ee96f1d}</Project>
+      <Name>DITS.HILI.WMS.DispatchConfiguration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\Dispatch\DITS.HILI.WMS.DispatchModel\DITS.HILI.WMS.DispatchModel.csproj">
+      <Project>{e986fd62-b01e-48fc-846e-f34f738bbb89}</Project>
+      <Name>DITS.HILI.WMS.DispatchModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\Dispatch\DITS.HILI.WMS.DispatchService\DITS.HILI.WMS.DispatchService.csproj">
+      <Project>{5ca164a6-381b-4e42-930c-a7f18cc33155}</Project>
+      <Name>DITS.HILI.WMS.DispatchService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\Picking\DITS.HILI.WMS.PickingAPIs\DITS.HILI.WMS.PickingAPIs.csproj">
+      <Project>{2ea291e5-a8aa-48cf-82d2-abf05797670b}</Project>
+      <Name>DITS.HILI.WMS.PickingAPIs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\Picking\DITS.HILI.WMS.PickingConfiguration\DITS.HILI.WMS.PickingConfiguration.csproj">
+      <Project>{9d32ce39-5bcc-44fb-9b9a-6b072a870dc2}</Project>
+      <Name>DITS.HILI.WMS.PickingConfiguration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\Picking\DITS.HILI.WMS.PickingModel\DITS.HILI.WMS.PickingModel.csproj">
+      <Project>{278aec6e-65e7-4a5b-ab12-fbc2c98fe0e4}</Project>
+      <Name>DITS.HILI.WMS.PickingModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\Picking\DITS.HILI.WMS.PickingService\DITS.HILI.WMS.PickingService.csproj">
+      <Project>{726c0feb-7d80-498b-b892-efd6386a6c79}</Project>
+      <Name>DITS.HILI.WMS.PickingService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\PutAway\DITS.HILI.WMS.PutAwayAPIs\DITS.HILI.WMS.PutAwayAPIs.csproj">
+      <Project>{a90ff16b-473c-4405-81d2-e624a120dab4}</Project>
+      <Name>DITS.HILI.WMS.PutAwayAPIs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\PutAway\DITS.HILI.WMS.PutAwayConfiguration\DITS.HILI.WMS.PutAwayConfiguration.csproj">
+      <Project>{6cafadb6-bf40-4568-ae74-e32c48595237}</Project>
+      <Name>DITS.HILI.WMS.PutAwayConfiguration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\PutAway\DITS.HILI.WMS.PutAwayContext\DITS.HILI.WMS.PutAwaySuggestMethod.csproj">
+      <Project>{3ea2f3df-029e-4e46-a6f8-cb1c786fe9a2}</Project>
+      <Name>DITS.HILI.WMS.PutAwaySuggestMethod</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\PutAway\DITS.HILI.WMS.PutAwayService\DITS.HILI.WMS.PutAwayService.csproj">
+      <Project>{5186e68c-7623-414d-9db1-e96b1a48a0b3}</Project>
+      <Name>DITS.HILI.WMS.PutAwayService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\PutAway\DITS.HILI.WMS.PutAway\DITS.HILI.WMS.PutAwayModel.csproj">
+      <Project>{54e124f5-517c-4fe3-b3a6-818d8dbba547}</Project>
+      <Name>DITS.HILI.WMS.PutAwayModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\Receive\DITS.HILI.WMS.ReceiveAPIs\DITS.HILI.WMS.ReceiveAPIs.csproj">
+      <Project>{ed91047f-75f7-435a-b457-e6ddab1ca89a}</Project>
+      <Name>DITS.HILI.WMS.ReceiveAPIs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\Receive\DITS.HILI.WMS.ReceiveConfiguration\DITS.HILI.WMS.ReceiveConfiguration.csproj">
+      <Project>{7748b55c-25bd-47cd-ade7-ca243603ded3}</Project>
+      <Name>DITS.HILI.WMS.ReceiveConfiguration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\Receive\DITS.HILI.WMS.ReceiveService\DITS.HILI.WMS.ReceiveService.csproj">
+      <Project>{83c7a590-e2f2-4055-bd43-6138d6a11f9d}</Project>
+      <Name>DITS.HILI.WMS.ReceiveService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\Receive\DITS.HILI.WMS.Receive\DITS.HILI.WMS.ReceiveModel.csproj">
+      <Project>{1bacba81-c6dc-4c94-bfef-273b052cedb6}</Project>
+      <Name>DITS.HILI.WMS.ReceiveModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\RegisterTruck\DITS.HILI.WMS.RegisterTruckAPIs\DITS.HILI.WMS.RegisterTruckAPIs.csproj">
+      <Project>{936635d4-5dca-4103-8ba2-ccb2ee887f32}</Project>
+      <Name>DITS.HILI.WMS.RegisterTruckAPIs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\RegisterTruck\DITS.HILI.WMS.RegisterTruckConfiguration\DITS.HILI.WMS.RegisterTruckConfiguration.csproj">
+      <Project>{6222282f-b9f8-44b9-bfbe-4fe694bf5aa5}</Project>
+      <Name>DITS.HILI.WMS.RegisterTruckConfiguration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\RegisterTruck\DITS.HILI.WMS.RegisterTruckModel\DITS.HILI.WMS.RegisterTruckModel.csproj">
+      <Project>{601169e8-90bc-480f-946c-c437f603e9e7}</Project>
+      <Name>DITS.HILI.WMS.RegisterTruckModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Stages\RegisterTruck\DITS.HILI.WMS.RegisterTruckService\DITS.HILI.WMS.RegisterTruckService\DITS.HILI.WMS.RegisterTruckService.csproj">
+      <Project>{233d5dbe-2089-416c-89ec-6cdcce7e7c45}</Project>
+      <Name>DITS.HILI.WMS.RegisterTruckService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Tools\DailyPlan\DITS.HILI.WMS.DailyPlanAPIs\DITS.HILI.WMS.DailyPlanAPIs.csproj">
+      <Project>{dd04e462-ac35-4a3e-8fe1-761e0ee42244}</Project>
+      <Name>DITS.HILI.WMS.DailyPlanAPIs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Tools\DailyPlan\DITS.HILI.WMS.DailyPlanConfiguration\DITS.HILI.WMS.DailyPlanConfiguration.csproj">
+      <Project>{39351ae1-ac83-472f-a348-a42093772234}</Project>
+      <Name>DITS.HILI.WMS.DailyPlanConfiguration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Tools\DailyPlan\DITS.HILI.WMS.DailyPlanService\DITS.HILI.WMS.DailyPlanService.csproj">
+      <Project>{d1cbe772-db10-4cb6-9822-5254fce0b51b}</Project>
+      <Name>DITS.HILI.WMS.DailyPlanService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Tools\DailyPlan\DITS.HILI.WMS.DailyPlan\DITS.HILI.WMS.DailyPlanModel.csproj">
+      <Project>{c8b9c513-4597-4e89-a29f-693f40ac8209}</Project>
+      <Name>DITS.HILI.WMS.DailyPlanModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Tools\InventoryTools\DITS.HILI.WMS.InventoryToolsAPIs\DITS.HILI.WMS.InventoryToolsAPIs.csproj">
+      <Project>{609a2068-cbea-49b4-81e1-7071c1c9cc59}</Project>
+      <Name>DITS.HILI.WMS.InventoryToolsAPIs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Tools\InventoryTools\DITS.HILI.WMS.InventoryToolsConfiguration\DITS.HILI.WMS.InventoryToolsConfiguration.csproj">
+      <Project>{1bad85e7-d880-4b89-91aa-11b5934b3a0b}</Project>
+      <Name>DITS.HILI.WMS.InventoryToolsConfiguration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Tools\InventoryTools\DITS.HILI.WMS.InventoryToolsModel\DITS.HILI.WMS.InventoryToolsModel.csproj">
+      <Project>{7beaad18-e94d-4974-83fd-aac78694d2cc}</Project>
+      <Name>DITS.HILI.WMS.InventoryToolsModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Tools\InventoryTools\DITS.HILI.WMS.InventoryToolsService\DITS.HILI.WMS.InventoryToolsService.csproj">
+      <Project>{cbdc62a7-fe16-4cca-9ef6-d28e8f454c2e}</Project>
+      <Name>DITS.HILI.WMS.InventoryToolsService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Tools\ProductionControl\DITS.HILI.WMS.ProductionControlAPIs\DITS.HILI.WMS.ProductionControlAPIs.csproj">
+      <Project>{f1dc4fdc-cc3a-43ea-a669-3a3acefba158}</Project>
+      <Name>DITS.HILI.WMS.ProductionControlAPIs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Tools\ProductionControl\DITS.HILI.WMS.ProductionControlConfiguration\DITS.HILI.WMS.ProductionControlConfiguration.csproj">
+      <Project>{3bf2068b-2992-48f1-a298-cb56c91653dc}</Project>
+      <Name>DITS.HILI.WMS.ProductionControlConfiguration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Tools\ProductionControl\DITS.HILI.WMS.ProductionControlModel\DITS.HILI.WMS.ProductionControlModel.csproj">
+      <Project>{ab5796dd-a187-4a1b-be22-77ad382e2307}</Project>
+      <Name>DITS.HILI.WMS.ProductionControlModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Tools\ProductionControl\DITS.HILI.WMS.ProductionControlService\DITS.HILI.WMS.ProductionControlService.csproj">
+      <Project>{c28d4d6b-8ea9-4d23-bc68-27bfe75a2897}</Project>
+      <Name>DITS.HILI.WMS.ProductionControlService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Tools\TranferWarehouse\DITS.HILI.WMS.TranferWarehouseAPIs\DITS.HILI.WMS.TransferWarehouseAPIs.csproj">
+      <Project>{5cf87667-0c6d-4fbd-b835-1799fbb699b8}</Project>
+      <Name>DITS.HILI.WMS.TransferWarehouseAPIs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Tools\TranferWarehouse\DITS.HILI.WMS.TranferWarehouseConfiguration\DITS.HILI.WMS.TransferWarehouseConfiguration.csproj">
+      <Project>{c6fd1475-fb44-45cc-b90f-eb5b2a05fa6e}</Project>
+      <Name>DITS.HILI.WMS.TransferWarehouseConfiguration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Tools\TranferWarehouse\DITS.HILI.WMS.TranferWarehouseModel\DITS.HILI.WMS.TransferWarehouseModel.csproj">
+      <Project>{a2159900-1ac8-4b14-8a3e-a57a243e4eb4}</Project>
+      <Name>DITS.HILI.WMS.TransferWarehouseModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Tools\TranferWarehouse\DITS.HILI.WMS.TranferWarehouseService\DITS.HILI.WMS.TransferWarehouseService.csproj">
+      <Project>{0cf2b382-4987-4a04-b93c-b1f9a95e1ed3}</Project>
+      <Name>DITS.HILI.WMS.TransferWarehouseService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\TruckQueue\DITS.HILI.WMS.TruckQueueAPIs\DITS.HILI.WMS.TruckQueueAPIs.csproj">
+      <Project>{0e052aa7-60ec-4d64-bc66-456c856af1a3}</Project>
+      <Name>DITS.HILI.WMS.TruckQueueAPIs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\TruckQueue\DITS.HILI.WMS.TruckQueueConfiguration\DITS.HILI.WMS.TruckQueueConfiguration.csproj">
+      <Project>{d96dc0ec-d83e-42ec-8b8c-4f544793c645}</Project>
+      <Name>DITS.HILI.WMS.TruckQueueConfiguration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\TruckQueue\DITS.HILI.WMS.TruckQueueModel\DITS.HILI.WMS.TruckQueueModel.csproj">
+      <Project>{0107440f-31b1-40c8-a20f-beeda82723ea}</Project>
+      <Name>DITS.HILI.WMS.TruckQueueModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\TruckQueue\DITS.HILI.WMS.TruckQueueService\DITS.HILI.WMS.TruckQueueService.csproj">
+      <Project>{cf31d254-3bd3-4fc3-b6de-83d72905b841}</Project>
+      <Name>DITS.HILI.WMS.TruckQueueService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DITS.HILI.WMS.Core.Model\DITS.HILI.WMS.Core.PackagesModel.csproj">
+      <Project>{a2b47a28-e020-4ca2-8590-8310c3a6a0af}</Project>
+      <Name>DITS.HILI.WMS.Core.PackagesModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DITS.HILI.WMS.Core.PackagesConfiguration\DITS.HILI.WMS.Core.PackagesConfiguration.csproj">
+      <Project>{2ea4932d-d8dd-4f0f-9d69-831e60e7717b}</Project>
+      <Name>DITS.HILI.WMS.Core.PackagesConfiguration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DITS.HILI.WMS.Core\DITS.HILI.WMS.Core.csproj">
+      <Project>{880da467-3a4c-4fd5-b848-2224594c8eec}</Project>
+      <Name>DITS.HILI.WMS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DITS.HILI.WMS.MasterAPIs\DITS.HILI.WMS.MasterAPIs.csproj">
+      <Project>{1d6a36d3-0f4e-44b1-9206-a6e78e5d0114}</Project>
+      <Name>DITS.HILI.WMS.MasterAPIs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DITS.HILI.WMS.MasterConfiguration\DITS.HILI.WMS.MasterConfiguration.csproj">
+      <Project>{1362a7ea-30ed-4b83-a60b-e93aa2b16500}</Project>
+      <Name>DITS.HILI.WMS.MasterConfiguration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DITS.HILI.WMS.MasterService\DITS.HILI.WMS.MasterService.csproj">
+      <Project>{9dcc8f45-cce7-45fa-bad9-4706494acbfd}</Project>
+      <Name>DITS.HILI.WMS.MasterService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DITS.HILI.WMS.Master\DITS.HILI.WMS.MasterModel.csproj">
+      <Project>{6119cb96-198d-40f4-b5a8-cf0466181697}</Project>
+      <Name>DITS.HILI.WMS.MasterModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53640</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:9001/WTF_API/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:9001/WTF_API/</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

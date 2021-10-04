@@ -1,0 +1,12 @@
+{
+  "ServerUri": "http://localhost:9002",
+  "Organization": null,
+  "ProjectKey": "wtf_repository",
+  "ProjectName": "wtf_repository",
+  "Profiles": {
+    "CSharp": {
+      "ProfileKey": "AW12K0aSwCxS77jevcwP",
+      "ProfileTimestamp": "2019-09-28T11:40:10+07:00"
+    }
+  }
+}

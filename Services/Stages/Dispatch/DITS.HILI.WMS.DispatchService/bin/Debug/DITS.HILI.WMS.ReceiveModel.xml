@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DITS.HILI.WMS.ReceiveModel</name>
+    </assembly>
+    <members>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.ReceiveCode">
+             <summary>
+            Receive Code, Auto create by service
+             </summary> 
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.ReceiveTypeID">
+            <summary>
+            Document Type ID (Receive)
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.ReceiveStatus">
+            <summary>
+            Receive Status Enumerable
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.ProductOwnerID">
+            <summary>
+            Product Owner ID
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.SupplierID">
+            <summary>
+            Supplier ID
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.EstimateDate">
+            <summary>
+            Estimate Date for receive 
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.ActualDate">
+            <summary>
+            Actual receive date
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.Reference1">
+            <summary>
+            Any reference (1) 
+            Default > OrderNo
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.Reference2">
+            <summary>
+            Any reference (2)
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.CloseJobReason">
+            <summary>
+            Reason for close receive job
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.IsUrgent">
+            <summary>
+            Receive order is urgent
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.InvoiceNo">
+            <summary>
+            Invoice No reference
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.PONumber">
+            <summary>
+            PO Number reference
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.ContainerNo">
+            <summary>
+            License plates of trucks 
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.LocationID">
+            <summary>
+            Loading in location id
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.IsCrossDock">
+            <summary>
+            Order is crosss docking
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.LineID">
+            <summary>
+            ProductionLine
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.ReferenceID">
+            <summary>
+            Reference Previous Module/Table
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.PackageID">
+            <summary>
+            Reference Previous BOX
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.ReceiveDetailCollection">
+            <summary>
+            Receive detail collection
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.ReceiveAssignJobCollection">
+            <summary>
+            Receive assign job collection
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.ProductOwner">
+            <summary>
+            Product Owner model
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.Supplier">
+            <summary>
+            Supplier model
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.Location">
+            <summary>
+            Location model
+            </summary>
+        </member>
+        <member name="P:DITS.HILI.WMS.ReceiveModel.Receive.DocumentType">
+            <summary>
+            Document Type model
+            </summary>
+        </member>
+        <member name="M:DITS.HILI.WMS.ReceiveModel.Receive.#ctor">
+            <summary>
+            Constuctor
+            </summary>
+        </member>
+        <member name="T:DITS.HILI.WMS.ReceiveModel.ReceiveCustomModel">
+            <summary>
+            Receive Custom Model
+            </summary>
+        </member>
+        <member name="T:DITS.HILI.WMS.ReceiveModel.ReceiveListModel">
+            <summary>
+            Recieve List Custom Model
+            </summary>
+        </member>
+        <member name="T:DITS.HILI.WMS.ReceiveModel.ReceiveHeaderModel">
+            <summary>
+            Add/Edit Receive Model
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceiveStatusEnum.New">
+            <summary>
+            New Receive Order
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceiveStatusEnum.LoadIn">
+            <summary>
+            Loading In
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceiveStatusEnum.Inprogress">
+            <summary>
+            Receiving order
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceiveStatusEnum.Partial">
+            <summary>
+            Wait for receive order to get more  
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceiveStatusEnum.Complete">
+            <summary>
+            Receive Order complete
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceiveStatusEnum.Close">
+            <summary>
+            Receive order is close
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceiveStatusEnum.Cancel">
+            <summary>
+            Cancel receive order
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceiveStatusEnum.Check">
+            <summary>
+            Internal Receive check
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceiveStatusEnum.GenDispatch">
+            <summary>
+            Internal Receive Generate Dispatch
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceiveDetailStatusEnum.New">
+            <summary>
+            New item
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceiveDetailStatusEnum.LoadIn">
+            <summary>
+            Loading In
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceiveDetailStatusEnum.Inprogress">
+            <summary>
+            Receiving item
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceiveDetailStatusEnum.Partial">
+            <summary>
+            Partial state from receiving
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceiveDetailStatusEnum.Complete">
+            <summary>
+            Finish receiving
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceiveDetailStatusEnum.Close">
+            <summary>
+            Close receive item
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceiveDetailStatusEnum.Cancel">
+            <summary>
+            Cancel receive item
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceivingStatusEnum.Inprogress">
+            <summary>
+            Receiving item
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceivingStatusEnum.WaitApprove">
+            <summary>
+            Finish receiving item
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceivingStatusEnum.Reject">
+            <summary>
+            Reject status
+            </summary>
+        </member>
+        <member name="F:DITS.HILI.WMS.ReceiveModel.ReceivingStatusEnum.Complete">
+            <summary>
+            Approved receiving item
+            </summary>
+        </member>
+    </members>
+</doc>

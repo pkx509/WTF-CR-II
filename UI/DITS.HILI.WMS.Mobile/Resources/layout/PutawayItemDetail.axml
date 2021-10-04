@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:scrollbars="vertical">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="60.0dp"
+        android:id="@+id/linearLayout5"
+        android:background="@android:color/holo_green_light"
+        android:gravity="right">
+        <Button
+            android:text="&lt;&lt;"
+            android:layout_width="47.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/paBackToListBtn" />
+        <TextView
+            android:text="WH : ####"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="247.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/txtWH"
+            android:gravity="center" />
+        <Button
+            android:text="Confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/paConfrimBtn" />
+        <Button
+            android:text="Clear"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/paClearBtn" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout1">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="134.0dp"
+            android:id="@+id/linearLayout2"
+            android:layout_marginBottom="0.0dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="237.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout3">
+                <TextView
+                    android:text="Pallet"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView1" />
+                <EditText
+                    android:inputType="textMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="41.0dp"
+                    android:id="@+id/txtPAPallet"
+                    android:text="XXX" />
+                <TextView
+                    android:text="Product"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView2" />
+                <EditText
+                    android:inputType="textMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtPAproductCode"
+                    android:text="XXX" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout4">
+                <ImageView
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imgProduct" />
+            </LinearLayout>
+        </LinearLayout>
+        <EditText
+            android:inputType="textMultiLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtPAproductName"
+            android:text="XXX" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="308.0dp"
+            android:id="@+id/linearLayout6">
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="129.5dp"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout7">
+                <TextView
+                    android:text="QTY"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="49.5dp"
+                    android:id="@+id/textView4"
+                    android:gravity="center_vertical" />
+                <TextView
+                    android:text="Remain QTY"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="49.5dp"
+                    android:id="@+id/textView4"
+                    android:gravity="center_vertical" />
+                <TextView
+                    android:text="Location"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="42.5dp"
+                    android:id="@+id/textView4"
+                    android:gravity="center_vertical" />
+                <TextView
+                    android:text="Suggest Location"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="42.5dp"
+                    android:id="@+id/textView4"
+                    android:gravity="center_vertical" />
+                <TextView
+                    android:text="Confirm Location"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="42.5dp"
+                    android:id="@+id/textView4"
+                    android:gravity="center_vertical" />
+                <TextView
+                    android:text="Lot"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="42.5dp"
+                    android:id="@+id/textView4"
+                    android:gravity="center_vertical" />
+                <TextView
+                    android:text="Reason"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="42.5dp"
+                    android:id="@+id/textView4"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout8">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="51.0dp"
+                    android:id="@+id/linearLayout9">
+                    <EditText
+                        android:inputType="numberDecimal"
+                        android:layout_width="133.5dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/txtPAQTY"
+                        android:text="#,###"
+                        android:numeric="decimal"
+                        android:gravity="right" />
+                    <EditText
+                        android:inputType="textMultiLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/txtPAUnit"
+                        android:text="KG"
+                        android:textAlignment="center"
+                        android:gravity="center_horizontal" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="51.0dp"
+                    android:id="@+id/linearLayout9">
+                    <EditText
+                        android:inputType="numberDecimal"
+                        android:layout_width="133.5dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/txtPARemainQTY"
+                        android:text="#,###"
+                        android:numeric="decimal"
+                        android:gravity="right" />
+                    <EditText
+                        android:inputType="textMultiLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/txtPARemainUnit"
+                        android:text="KG"
+                        android:textAlignment="center"
+                        android:gravity="center_horizontal" />
+                </LinearLayout>
+                <EditText
+                    android:inputType="textMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtPALocation"
+                    android:text="XXX" />
+                <EditText
+                    android:inputType="textMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtPASgLocation"
+                    android:text="XXX" />
+                <EditText
+                    android:inputType="textMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtPAConfLoaction"
+                    android:text="XXX" />
+                <EditText
+                    android:inputType="textMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtPALot"
+                    android:text="XXX" />
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="44.0dp"
+                    android:id="@+id/spnPAReason" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="67.0dp"
+            android:id="@+id/linearLayout10"
+            android:minWidth="25px"
+            android:minHeight="25px" />
+    </LinearLayout>
+</LinearLayout>
