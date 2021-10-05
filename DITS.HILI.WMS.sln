@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DITS.HILI.WMS.Core", "Infrastucture\DITS.HILI.WMS.Core\DITS.HILI.WMS.Core.csproj", "{880DA467-3A4C-4FD5-B848-2224594C8EEC}"
 EndProject
@@ -117,12 +117,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Report", "Report", "{8BFDFC
 EndProject
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "WTF_Reporting_Server", "Report\WTF_Reporting_Server\WTF_Reporting_Server.rptproj", "{C5C4DC0D-103C-4A2D-8117-7EF04AB6B4BB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DLL", "DLL", "{9FAC5827-5590-4AAF-8CAD-C1A4FF7DC957}"
-	ProjectSection(SolutionItems) = preProject
-		..\_DITS WMS\branches\WANTHAI_FOOD\packages\AutoMapper.4.1.1\lib\dotnet\AutoMapper.dll = ..\_DITS WMS\branches\WANTHAI_FOOD\packages\AutoMapper.4.1.1\lib\dotnet\AutoMapper.dll
-		DLL\BarcodeLib.dll = DLL\BarcodeLib.dll
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Picking", "Picking", "{F1EBD9C0-5F35-46E0-84F6-15F7C49A9DF9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DITS.HILI.WMS.PickingConfiguration", "Services\Stages\Picking\DITS.HILI.WMS.PickingConfiguration\DITS.HILI.WMS.PickingConfiguration.csproj", "{9D32CE39-5BCC-44FB-9B9A-6B072A870DC2}"
@@ -158,6 +152,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DITS.HILI.WMS.TruckQueueModel", "Services\TruckQueue\DITS.HILI.WMS.TruckQueueModel\DITS.HILI.WMS.TruckQueueModel.csproj", "{0107440F-31B1-40C8-A20F-BEEDA82723EA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DITS.HILI.WMS.TruckQueueConfiguration", "Services\TruckQueue\DITS.HILI.WMS.TruckQueueConfiguration\DITS.HILI.WMS.TruckQueueConfiguration.csproj", "{D96DC0EC-D83E-42EC-8B8C-4F544793C645}"
+	ProjectSection(ProjectDependencies) = postProject
+		{29104F08-820F-495A-B677-B44637566916} = {29104F08-820F-495A-B677-B44637566916}
+		{880DA467-3A4C-4FD5-B848-2224594C8EEC} = {880DA467-3A4C-4FD5-B848-2224594C8EEC}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DITS.HILI.WMS.TruckQueueService", "Services\TruckQueue\DITS.HILI.WMS.TruckQueueService\DITS.HILI.WMS.TruckQueueService.csproj", "{CF31D254-3BD3-4FC3-B6DE-83D72905B841}"
 EndProject

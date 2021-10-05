@@ -63,7 +63,7 @@
     </Reference>
     <Reference Include="BarcodeLib, Version=1.0.0.22, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\DLL\BarcodeLib.dll</HintPath>
+      <HintPath>..\..\..\lib\BarcodeLib.dll</HintPath>
     </Reference>
     <Reference Include="ClosedXML, Version=0.95.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\ClosedXML.0.95.3\lib\net40\ClosedXML.dll</HintPath>
